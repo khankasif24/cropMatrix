@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fasal Ai - The Digital Agronomist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1c",
+                    "on-primary-fixed-variant": "#005235",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#ffffff",
+                    "outline-variant": "#bdcac0",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#643f00",
+                    "primary-fixed": "#8df7c1",
+                    "on-primary-container": "#ffffff",
+                    "tertiary-fixed": "#ffddb5",
+                    "tertiary-container": "#a36a00",
+                    "surface-variant": "#e1e3e2",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eceeed",
+                    "inverse-primary": "#71dba6",
+                    "tertiary-fixed-dim": "#ffb957",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#eff1f0",
+                    "primary-container": "#00875a",
+                    "outline": "#6e7a71",
+                    "background": "#ffffff",
+                    "surface-container-high": "#f0f4f2",
+                    "surface-bright": "#f8faf9",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#3c6842",
+                    "secondary-fixed-dim": "#a2d3a4",
+                    "surface-tint": "#006c47",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#426e47",
+                    "secondary-container": "#dcfce7",
+                    "on-surface": "#06231c",
+                    "on-tertiary-fixed": "#2a1800",
+                    "tertiary": "#825400",
+                    "on-primary-fixed": "#002113",
+                    "surface-container-highest": "#e1e3e2",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#bdefbe",
+                    "on-surface-variant": "#4a5d58",
+                    "primary-fixed-dim": "#71dba6",
+                    "primary": "#00875a",
+                    "on-secondary-fixed": "#002109",
+                    "surface-container-low": "#f8faf9",
+                    "surface-dim": "#d8dad9",
+                    "surface": "#ffffff",
+                    "inverse-surface": "#2e3131",
+                    "on-secondary-fixed-variant": "#24502c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.75rem",
+                    "lg": "1.5rem",
+                    "xl": "2.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(6, 35, 28, 0.8) 0%, rgba(6, 35, 28, 0.4) 100%);
+        }
+        .text-shadow-premium {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .cta-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 135, 90, 0.3);
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -20px rgba(0, 108, 71, 0.15);
+        }
+        .lang-dropdown:hover .lang-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- Floating AI Chatbot FAB -->
+<!-- Navigation -->
+<header class="glass-nav border-b border-emerald-50 fixed top-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-12">
+<div class="flex flex-col gap-2">
+<!-- Language Selector -->
+<div class="lang-dropdown relative">
+<button class="flex items-center gap-1.5 text-[10px] font-bold text-emerald-950/60 uppercase tracking-widest hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xs">language</span>
+                        English
+                        <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="lang-menu hidden absolute left-0 top-full mt-2 w-48 bg-white border border-emerald-50 rounded-xl shadow-xl p-2 z-[60]">
+<div class="px-3 py-1.5 text-[9px] font-black text-emerald-950/40 uppercase tracking-[0.2em] border-b border-emerald-50 mb-1">Select Language</div>
+<div class="max-h-64 overflow-y-auto">
+<a class="block px-3 py-2 text-sm font-semibold text-primary bg-emerald-50 rounded-lg" href="#">English</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">हिन्दी (Hindi)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">தமிழ் (Tamil)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">తెలుగు (Telugu)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">ಕನ್ನಡ (Kannada)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">മലയാളം (Malayalam)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">বাংলা (Bengali)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">ଓଡ଼ିଆ (Odia)</a>
+<a class="block px-3 py-2 text-sm font-semibold text-emerald-950/70 hover:bg-emerald-50 rounded-lg" href="#">मराठी (Marathi)</a>
+</div>
+</div>
+</div>
+<div class="flex items-center">
+<img alt="Fasal.AI Logo" class="w-auto object-contain h-12" src="https://lh3.googleusercontent.com/aida/ADBb0uiaBrzl__Ye7aVe4vv5B7M8a6KogKDzJ8PMDYk-wBDqnvxmaMq7UZQonsiFtIPlxkpLGtI5_1GmeKVfuYjHiQLtM2j07urAqjIkGz1dfsg-xeN0LpX7HJPuFSef1713wPf_oh-PrRkRACYPp7707zZaknZfigOsIeMbRyPby_88w-u_u01jSwEm72kGR8Irxq8BqCdoJsL7P97dvSy5DGE06dciHMlRGgT4l7Qb_qWgVTyWwYI9q80cOEIgSqv9Zhy5HH3htVdCc9o"/>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-8 pt-6">
+<a class="text-emerald-950 font-bold text-sm tracking-wide hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-emerald-950/60 font-bold text-sm tracking-wide hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-emerald-950/60 font-bold text-sm tracking-wide hover:text-primary transition-colors" href="#">Science</a>
+<a class="text-emerald-950/60 font-bold text-sm tracking-wide hover:text-primary transition-colors" href="#">Company</a>
+</div>
+</div>
+<div class="flex items-center gap-6 pt-6">
+<button class="text-emerald-950 font-bold text-sm tracking-wide hover:text-primary transition-colors">Login</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Professional Smart Farming" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaiCDHlDcZCPqYUOedRF722sRndlODl2fI5BFcXjvqpL0EwgGKNNH0qpA1gmv5LeNnUN06d17q3r_53aeRVjReLuhk5j08o2ON9cmyq03206CFohsxk6J1kympdLKWw_fwlFf9WTWOkr_fBk5OZaIbaOeiCWDKHKJP-5Xj48-xDAJtsLumdrfLo5wzYv8mRasNZogrfibHZzWKglz-ocPrFj3DVGnxrmoZV-noG08nZkGvOy9hN_WmQzgPB_N2f7o_XVszR3EJPHzT"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+<div class="space-y-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-xs font-bold tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Introducing the Digital Agronomist 🌾
+                </div>
+<h1 class="text-5xl md:text-8xl font-extrabold text-white leading-[1.05] tracking-tight text-shadow-premium"><span class="bg-gradient-to-r from-[#00875A] to-white bg-clip-text text-transparent">Welcome</span> <br/> Fasal AI</h1>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+<button class="w-full sm:w-auto px-12 py-5 bg-primary text-white rounded-full font-extrabold text-lg shadow-2xl hover:bg-emerald-400 hover:text-emerald-950 transition-all flex items-center justify-center gap-3">
+                        Launch Intelligence Platform
+                        <span class="material-symbols-outlined">trending_up</span>
+</button>
+<button class="w-full sm:w-auto px-12 py-5 bg-white/5 backdrop-blur-xl border border-white/30 text-white rounded-full font-extrabold text-lg hover:bg-white/10 transition-all">
+                        View Methodology
+                    </button>
+</div>
+</div>
+</div>
+<!-- Hero Stats Footer -->
+</section>
+<!-- Ecosystem Capabilities -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-12">
+<div class="max-w-3xl">
+<span class="text-primary font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Our Capabilities 🚀</span>
+<h2 class="text-4xl md:text-6xl font-extrabold text-emerald-950 tracking-tight leading-tight">Ecosystem Intelligence for Modern Agriculture</h2>
+</div>
+<div class="flex gap-4 mb-2">
+<button class="w-14 h-14 rounded-full border border-emerald-100 flex items-center justify-center text-emerald-800 hover:bg-emerald-50 transition-all">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-emerald-950 flex items-center justify-center text-white hover:bg-emerald-900 transition-all shadow-xl shadow-emerald-950/20">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Crop Advisory -->
+<div class="lg:col-span-2 group service-card bg-surface-container-low rounded-[2.5rem] overflow-hidden border border-emerald-50">
+<div class="flex flex-col md:flex-row h-full">
+<div class="p-12 md:w-5/12 flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-emerald-900 rounded-2xl flex items-center justify-center text-white mb-10 shadow-lg shadow-emerald-900/10">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="text-3xl font-extrabold text-emerald-950 mb-6">Crop Recommendation 👨‍🌾</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">Harnessing local soil chemistry and hyper-local weather data to provide precise planting and irrigation schedules. 💧</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white border border-emerald-100 rounded-full text-[10px] font-black text-emerald-800 uppercase tracking-widest">🤖 Real-time AI</span>
+<span class="px-4 py-2 bg-white border border-emerald-100 rounded-full text-[10px] font-black text-emerald-800 uppercase tracking-widest">🗺️ Soil Mapping</span>
+</div>
+</div>
+<button class="mt-12 flex items-center gap-2 font-bold text-primary group/link">
+                            Explore Advisor <span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="md:w-7/12 h-80 md:h-auto relative overflow-hidden">
+<img alt="Crop Science" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1DfUbh-4bdID_cqIj4dWqYM2v6X5Ho5vUBmRyFZ1TmWfC7WvEG0aP44CwAo91zXzfGjKTZ1xisQhb0OfRPUIj_UGWwZS_ph_cPr_4tOt2dBUyzHeso9i-KaIcp0rpTebSzQ_pBkIpLr5yvbvdRywNRAkEcj_KCARblz0fS9VknKaXDRMecqt9j-vej_ukeXUXDJN2kbzEU4MiNjrON0j-NVUpqAv5Z2thPmHgvtsn10qnpm0NlGn_pWxLvyKJx5DgAw9ZztYRlnbN"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Disease Detection -->
+<div class="service-card bg-emerald-950 rounded-[2.5rem] p-12 flex flex-col justify-end text-white relative overflow-hidden group min-h-[500px]">
+<img alt="Disease Detection" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtCMM3po-64xkFJR5LVpHE4MDwPSRe6QWDbCO-giGI6Bt36AJCyBktnogcvTn2zPZrhF-yIp_EjtIxHZT0BQMvBUr-TXONZGZo5M22vJrIKsNRHGt8vymVqIIvsG_2mInIMGLGFyuuOgVANNaXL6YcoiR5NAVDVp6Dq0SHtahcDlckpKyt-gdk8fIDJ2vH1P5gJM4UQT5N4gJh_4zt91Ulsy2oyAGkXxSM1zJqp-rBnziy5FaJlJkPh2qFhX3dvh_WB002AWKZEx6B"/>
+<div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/40 to-transparent"></div>
+<div class="relative z-10 space-y-6">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shutter_speed</span>
+</div>
+<h3 class="text-2xl font-extrabold leading-tight">Instant Pathogen Detection 🦠</h3>
+<p class="text-white/60 text-base leading-relaxed">Early identification via multi-spectral imaging to protect your yields before damage occurs. 🛡️</p>
+<button class="pt-4 flex items-center gap-2 text-sm font-bold text-primary uppercase tracking-widest">Learn More</button>
+</div>
+</div>
+<!-- Market Intelligence -->
+<div class="service-card bg-white rounded-[2.5rem] p-12 border border-emerald-50 flex flex-col justify-between hover:border-primary/20">
+<div>
+<div class="flex items-center gap-3 text-primary mb-10">
+<span class="material-symbols-outlined text-3xl">query_stats</span>
+<span class="font-black tracking-[0.2em] text-[10px] uppercase">Market Intelligence 💰</span>
+</div>
+<h3 class="text-3xl font-extrabold text-emerald-950 mb-4">Market Pricing</h3>
+<p class="text-on-surface-variant text-base leading-relaxed">Predictive analytics for global commodity shifts, allowing you to optimize sell-timing with confidence. 📈</p>
+</div>
+<div class="mt-12 space-y-4">
+<div class="flex justify-between items-center p-5 bg-emerald-50/50 rounded-2xl border border-emerald-100/50">
+<span class="font-bold text-xs text-emerald-950 tracking-wider">🫘 SOYBEANS / MT</span>
+<span class="text-emerald-600 font-extrabold text-sm">+5.8%</span>
+</div>
+<div class="flex justify-between items-center p-5 bg-emerald-50/50 rounded-2xl border border-emerald-100/50">
+<span class="font-bold text-xs text-emerald-950 tracking-wider">🌽 MAIZE / MT</span>
+<span class="text-emerald-600 font-extrabold text-sm">+1.4%</span>
+</div>
+</div>
+</div>
+<!-- Rotation Planning -->
+<div class="lg:col-span-2 group service-card bg-emerald-100/40 rounded-[2.5rem] p-12 flex flex-col md:flex-row items-center gap-16 overflow-hidden">
+<div class="flex-1 space-y-8">
+<div class="inline-block px-4 py-1.5 bg-emerald-900 text-white rounded-full text-[10px] font-black uppercase tracking-widest">Digital Agronomy</div>
+<h3 class="text-4xl font-extrabold text-emerald-950 leading-tight">Precision Rotation &amp; Soil Health ✨</h3>
+<p class="text-emerald-900/70 text-lg leading-relaxed max-w-md">Multi-generational soil longevity through automated nitrogen fixation cycles and microbial health monitoring. 🧪</p>
+<button class="px-8 py-4 bg-emerald-950 text-white rounded-full font-bold text-sm flex items-center gap-3 hover:bg-emerald-900 transition-all w-fit shadow-xl shadow-emerald-950/10">
+                        View Rotation Models
+                        <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</button>
+</div>
+<div class="flex-1 w-full max-w-md relative">
+<div class="bg-white rounded-[2rem] p-8 border border-white/50 shadow-2xl relative z-10">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-2 bg-primary rounded-full"></div>
+<div class="flex-1 h-2 bg-emerald-100 rounded-full"></div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-24 h-2 bg-primary/60 rounded-full"></div>
+<div class="flex-1 h-2 bg-emerald-100 rounded-full"></div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-16 h-2 bg-primary rounded-full"></div>
+<div class="flex-1 h-2 bg-emerald-100 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="absolute -top-6 -right-6 w-full h-full bg-primary/10 rounded-[2rem] -rotate-3"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto bg-emerald-950 rounded-[4rem] p-16 md:p-32 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+<div class="relative z-10 space-y-12">
+<h2 class="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight">Ready to harvest the <br class="hidden md:block"/> power of intelligence? 💎</h2>
+<p class="text-white/60 text-xl md:text-2xl max-w-3xl mx-auto font-medium">Secure your agricultural legacy with the world's most advanced predictive analytics engine. 🤝</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6 pt-8">
+<button class="px-14 py-6 bg-white text-emerald-950 rounded-full font-black text-lg shadow-2xl shadow-black/40 hover:scale-105 transition-all">Start Your Professional Trial</button>
+<button class="px-14 py-6 bg-transparent text-white border-2 border-white/20 rounded-full font-black text-lg hover:bg-white/5 transition-all">Consult an Enterprise Specialist</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white pt-32 pb-12 px-8 border-t border-emerald-50">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-16 mb-24">
+<div class="lg:col-span-2 space-y-10">
+<img alt="Fasal.AI" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uh1mkwoXFV18psLObz1q0Q_IDFuZS2r1YXXr5Jw45eL1KiIEwdu4PcRFoCEvkQLnLLN0sd2z1Hcrv2z8q_drMFKqaz0pluuv-WPjx3ItVMwzmINEhJXsgK2AKcuJEeEllIoo5U97xRdexEmil9DavikQNj7x2OEiZKCOj0DmiQqn4nNUYbCdOXkAD6Hu4B-9-usiMivEiLS2yT9lp5UbdTypkoV7KtKY0SoZwu-Zyi6He4E3B5j-oEnoGkM9RMDu1JMNYxeP7F5yhc"/>
+<p class="text-emerald-950/60 max-w-xs leading-relaxed font-medium text-sm">Fasal.AI is the premier intelligence layer for modern agriculture. We are building a sustainable global future through data precision. 🪴</p>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-950 hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-950 hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-lg">hub</span></a>
+<a class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-950 hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-lg">shield</span></a>
+</div>
+</div>
+<div class="space-y-8">
+<h4 class="font-black text-[10px] uppercase tracking-[0.3em] text-emerald-950">Intelligence 🧠</h4>
+<ul class="space-y-5 text-sm text-emerald-950/60 font-bold">
+<li><a class="hover:text-primary transition-colors" href="#">Yield Forecasts</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Climate Modeling</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Soil Genetics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Satellite Analysis</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h4 class="font-black text-[10px] uppercase tracking-[0.3em] text-emerald-950">Ecosystem 🔗</h4>
+<ul class="space-y-5 text-sm text-emerald-950/60 font-bold">
+<li><a class="hover:text-primary transition-colors" href="#">Crop Advisory</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Disease Shield</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Market Engine</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Access</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h4 class="font-black text-[10px] uppercase tracking-[0.3em] text-emerald-950">Resources 📚</h4>
+<ul class="space-y-5 text-sm text-emerald-950/60 font-bold">
+<li><a class="hover:text-primary transition-colors" href="#">White Papers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tech Stack</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h4 class="font-black text-[10px] uppercase tracking-[0.3em] text-emerald-950">Company 🏢</h4>
+<ul class="space-y-5 text-sm text-emerald-950/60 font-bold">
+<li><a class="hover:text-primary transition-colors" href="#">About</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ethics in AI</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-emerald-50 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-bold text-emerald-950/40 uppercase tracking-widest">© 2024 Fasal Ai. Global Agricultural Intelligence System. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="text-[10px] font-bold text-emerald-950/40 uppercase tracking-widest hover:text-primary" href="#">Legal</a>
+<a class="text-[10px] font-bold text-emerald-950/40 uppercase tracking-widest hover:text-primary" href="#">Security</a>
+<a class="text-[10px] font-bold text-emerald-950/40 uppercase tracking-widest hover:text-primary" href="#">Compliance</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

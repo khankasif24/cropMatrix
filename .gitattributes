@@ -1,0 +1,4 @@
+*.tflite filter=lfs diff=lfs merge=lfs -text
+datasets/India Agriculture Crop Production.csv filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
+datasets/*.csv filter=lfs diff=lfs merge=lfs -text

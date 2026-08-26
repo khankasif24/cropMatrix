@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fertilizer &amp; Remedies | Fasal.AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f3",
+                        "surface-tint": "#059669",
+                        "surface-container-high": "#e6e9e8",
+                        "primary-fixed-dim": "#a7f3d0",
+                        "on-background": "#064e3b",
+                        "tertiary-fixed": "#ffddb5",
+                        "tertiary": "#825400",
+                        "error": "#ba1a1a",
+                        "primary": "#059669",
+                        "on-secondary-container": "#064e3b",
+                        "on-surface-variant": "#3e4942",
+                        "on-secondary-fixed-variant": "#065f46",
+                        "on-secondary-fixed": "#022c22",
+                        "surface-container": "#f0fdf4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "on-primary-fixed-variant": "#064e3b",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "surface-variant": "#e1e3e2",
+                        "tertiary-container": "#a36a00",
+                        "on-primary-fixed": "#022c22",
+                        "inverse-primary": "#a7f3d0",
+                        "on-tertiary-fixed": "#2a1800",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0fdf4",
+                        "surface-bright": "#ffffff",
+                        "secondary": "#059669",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#064e3b",
+                        "secondary-container": "#d1fae5",
+                        "primary-fixed": "#d1fae5",
+                        "secondary-fixed": "#d1fae5",
+                        "error-container": "#ffdad6",
+                        "background": "#ffffff",
+                        "primary-container": "#10b981",
+                        "on-surface": "#064e3b",
+                        "surface-container-highest": "#e1e3e2",
+                        "secondary-fixed-dim": "#6ee7b7",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d1d5db",
+                        "outline-variant": "#d1fae5",
+                        "outline": "#059669",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/20">
+<div class="flex min-h-screen">
+<!-- SideNavBar - Shared Component -->
+<aside class="hidden md:flex flex-col h-screen w-72 rounded-r-xl sticky left-0 top-0 bg-surface-container text-primary overflow-y-auto border-r border-primary/10">
+<div class="flex flex-col h-full py-8 space-y-2">
+<div class="px-8 mb-8">
+<img alt="Fasal.AI Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugFXN8fEW3OfyGclsuaS8XdDGkzF8vXIRE6cIRTIh61KP0qaey34s8-1LeicZyUDphnfL0acGpwD8O32aMWMUcDcewl2iw6bsRT4DdQDs8dUDRN4g7w-X3VGhGbyiK6mQaq5ZLDV2nMtEwM8VYo4NrSd9462V80GYR_12j5XaAUtGP9S3cANx_F_ZMM0gWQACH3XzKLk9eBRrysJTI7DtD24tw6P8LzVEsLN_d5kOsTW5JsKb8vY0-BR94_Mw0dzHOtZUAm8GpXKuE"/>
+<p class="font-label text-xs tracking-wide text-primary/60 mt-1 uppercase">Premium Intelligence ✨</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">dashboard</span>
+<span class="font-label text-sm tracking-wide">🏠 Dashboard</span>
+</a>
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">psychology</span>
+<span class="font-label text-sm tracking-wide">💡 Crop Advisory</span>
+</a>
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">shutter_speed</span>
+<span class="font-label text-sm tracking-wide">🔍 Disease Detection</span>
+</a>
+<!-- Active State: Fertilizer -->
+<a class="flex items-center space-y-0 bg-primary/10 text-primary font-bold rounded-l-full ml-4 shadow-sm px-6 py-3 active:opacity-90 transition-opacity" href="#">
+<span class="material-symbols-outlined mr-4">water_drop</span>
+<span class="font-label text-sm tracking-wide">🌿 Fertilizer</span>
+</a>
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">trending_up</span>
+<span class="font-label text-sm tracking-wide">📈 Market Prices</span>
+</a>
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">query_stats</span>
+<span class="font-label text-sm tracking-wide">🌾 Yield Prediction</span>
+</a>
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">groups</span>
+<span class="font-label text-sm tracking-wide">🤝 Community</span>
+</a>
+<a class="flex items-center space-y-0 px-6 py-3 text-on-surface-variant/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-4">person</span>
+<span class="font-label text-sm tracking-wide">👤 Profile</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-headline font-bold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                    🌱 New Crop Cycle
+                </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 min-w-0 overflow-x-hidden bg-white">
+<!-- TopNavBar - Shared Component -->
+<header class="bg-white/80 backdrop-blur-xl z-50 sticky top-0 w-full px-8 py-4 flex justify-between items-center max-w-screen-2xl mx-auto border-b border-primary/5">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-headline font-bold text-lg text-primary">Fertilizer &amp; Remedies 🧪</h2>
+</div>
+<div class="hidden md:flex items-center space-x-6">
+<!-- Language Selector -->
+<div class="flex items-center gap-2 bg-surface-container rounded-full px-4 py-1.5 border border-primary/10">
+<span class="material-symbols-outlined text-sm text-primary">language</span>
+<select class="bg-transparent border-none text-xs font-bold font-label text-primary focus:ring-0 p-0 pr-6 cursor-pointer">
+<option value="en">English (US)</option>
+<option value="hi">Hindi (हिंदी)</option>
+<option value="te">Telugu (తెలుగు)</option>
+<option value="mr">Marathi (मराठी)</option>
+</select>
+</div>
+<nav class="flex items-center space-x-8">
+<a class="font-label text-sm text-on-surface-variant/60 hover:text-primary transition-all" href="#">Home</a>
+<a class="font-label text-sm text-on-surface-variant/60 hover:text-primary transition-all" href="#">Predict</a>
+</nav>
+<div class="h-10 w-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs overflow-hidden ring-2 ring-primary/10">
+<img class="w-full h-full object-cover" data-alt="professional male agronomist portrait in clean setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7O7Bw6ZOblQrkl6qdefJ_5D0suUQ-nbxBHIEWYQVU1bN_2t1-Lyg7855nY3lTycH_E-fRMCFbiHBaXAiihxWiiNZH9eQW1Ivh2rZfHN7NBn4efMRFqXDhmMfjh_z3IwY9NU-v2RGa-7tPq9RlhoCkNUwSk8oG6pinuuOOP8jHPQ4K8pb5zyfYJwzLUZJ1oJKUgH0vudp57G3I8yXiT3LNQwE47QrSw9G_gWYJdQFq0iVdA9AZcbsyrkUYeWVoqJ0_lijPUTEMBmsN"/>
+</div>
+</div>
+</header>
+<div class="max-w-7xl mx-auto px-6 py-10 space-y-12">
+<!-- Hero Section & Tab Switcher -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface tracking-tight mb-4 leading-tight">
+                        Optimize Your Soil's <span class="text-primary underline decoration-primary/20">Vitality 💎</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                        Input your soil data to receive precision-engineered fertilizer protocols or sustainable organic remedies tailored to your specific crop needs.
+                    </p>
+</div>
+<div class="inline-flex p-1.5 bg-surface-container rounded-full self-start md:self-auto shadow-inner">
+<button class="px-8 py-3 rounded-full font-headline font-bold text-sm bg-white text-primary shadow-sm transition-all border border-primary/5">
+                        📦 Market Fertilizer
+                    </button>
+<button class="px-8 py-3 rounded-full font-headline font-bold text-sm text-on-surface-variant/60 hover:text-primary transition-all">
+                        🍂 Organic Remedies
+                    </button>
+</div>
+</section>
+<!-- Bento Input & Analysis Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Input Form Card -->
+<div class="lg:col-span-4 bg-white rounded-xl p-8 shadow-sm border border-primary/10">
+<h3 class="font-headline font-bold text-xl mb-8 flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined">analytics</span>
+                        Soil Analysis 📊
+                    </h3>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-primary/60 uppercase tracking-widest">Selected Crop 🌾</label>
+<select class="w-full bg-surface-container border-primary/10 rounded-lg py-4 px-4 font-headline text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all">
+<option>Winter Wheat (Hard Red)</option>
+<option>Hybrid Corn (Non-GMO)</option>
+<option>Basmati Rice</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-primary/60 uppercase tracking-widest">Soil Type 🏜️</label>
+<select class="w-full bg-surface-container border-primary/10 rounded-lg py-4 px-4 font-headline text-sm focus:ring-2 focus:ring-primary/20 transition-all">
+<option>Loamy</option>
+<option>Clay</option>
+<option>Sandy</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-primary/60 uppercase tracking-widest">pH Level ⚖️</label>
+<input class="w-full bg-surface-container border-primary/10 rounded-lg py-4 px-4 font-headline text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="6.5" step="0.1" type="number"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label text-xs font-bold text-primary/60 uppercase tracking-widest">Nutrient Levels (PPM) 🔋</label>
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-3 text-center">
+<span class="block text-[10px] font-bold text-primary/60 mb-1">NITROGEN (N)</span>
+<input class="w-full bg-transparent border-none text-center font-headline font-bold text-primary p-0 focus:ring-0" placeholder="24" type="text"/>
+</div>
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-3 text-center">
+<span class="block text-[10px] font-bold text-primary/60 mb-1">PHOSPHO (P)</span>
+<input class="w-full bg-transparent border-none text-center font-headline font-bold text-primary p-0 focus:ring-0" placeholder="18" type="text"/>
+</div>
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-3 text-center">
+<span class="block text-[10px] font-bold text-primary/60 mb-1">POTASH (K)</span>
+<input class="w-full bg-transparent border-none text-center font-headline font-bold text-primary p-0 focus:ring-0" placeholder="32" type="text"/>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-headline font-bold text-md shadow-xl shadow-primary/20 flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95 mt-4" type="button">
+                            Generate Prescription
+                            <span class="material-symbols-outlined text-xl">auto_awesome</span>
+</button>
+</form>
+</div>
+<!-- Results Column -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between mb-2 px-2">
+<h3 class="font-headline font-bold text-xl text-on-surface">Recommended Solutions ✨</h3>
+<span class="text-xs font-label text-on-surface-variant/60">Updated 2 mins ago 🕒</span>
+</div>
+<!-- Result Card 1 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row border border-primary/5">
+<div class="md:w-1/3 relative h-48 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="close up of premium granulated blue fertilizer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv0W-DJJKxi2Za0o59eY8FDWJDRo7g65D3gmBcFUTpuLjJkRiSgfShU320eHaNaRdx9bQfWJUrblK2m0Ye5gqZCBx3Ty1AvVfLIoAp_NDWeEkMaYNvszsP6jm4a2GaB01WeUqVRkver6mUEKE5-ejyGsLN6Tl6AxNiNVfFg5EN2KiNBSrrqBJpvUBYAz-pkIhDue-NuZEhFOAA-NzF3DTVIyYS-di_pKUnSDZJsHIx88Qpcqd-eQsJ8UIOpxJJGvlgPmQVwaKM6ZwS"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm">🎯 High Accuracy</div>
+</div>
+<div class="flex-1 p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-2xl text-on-surface">Premium NPK 19:19:19</h4>
+<p class="font-label text-sm text-on-surface-variant mt-1">Balanced foliar application for early vegetative stage.</p>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-primary">2.5kg</div>
+<div class="text-[10px] font-bold text-on-surface-variant/40 uppercase">PER ACRE 🚜</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-primary/5 rounded-lg p-3">
+<div class="text-[10px] font-bold text-primary/40 uppercase mb-1">Dilution 💧</div>
+<div class="font-headline font-bold text-sm">200L Water</div>
+</div>
+<div class="bg-primary/5 rounded-lg p-3">
+<div class="text-[10px] font-bold text-primary/40 uppercase mb-1">Timing 🌅</div>
+<div class="font-headline font-bold text-sm">Early Morning</div>
+</div>
+<div class="bg-primary/5 rounded-lg p-3 col-span-2 md:col-span-1">
+<div class="text-[10px] font-bold text-primary/40 uppercase mb-1">Frequency ⏳</div>
+<div class="font-headline font-bold text-sm">Every 15 Days</div>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-2">
+<button class="flex-1 bg-primary/10 hover:bg-primary/20 text-primary font-bold py-3 rounded-lg text-sm transition-all">View Full Protocol 📑</button>
+<button class="bg-primary text-on-primary p-3 rounded-lg hover:bg-primary-container transition-all shadow-md shadow-primary/20">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Result Card 2 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row border border-primary/5">
+<div class="md:w-1/3 relative h-48 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="vibrant green agricultural field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsDaUVru0iRQYCb6dt2cHosoXqzAjgh6Mf8YzrUa_LVQZwLKqPCd-2PIU7NTCHZxtQ9MTNdSohWOZ1BScwx16DdlIoGpZ7Fkw4gOO18CDIUlR27ZodatQfG4pesETd3SpNlqnwYYoA5WYRKlsDgbG5yVJzTiSieM99vEou7EROfVmQb0Yu4Eqa1fPBYO7Q-8HhWZFaZM0OrztyJaL3oNQfr810AjVmjDApJZ6vK_UfEAdFQE3wOkOmWsa_ECM0e2DUAzU8Wa8AM4Zf"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm">⭐ Soil Booster</div>
+</div>
+<div class="flex-1 p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-2xl text-on-surface">Chelated Zinc &amp; Boron</h4>
+<p class="font-label text-sm text-on-surface-variant mt-1">Correcting specific deficiency found in current pH (6.5).</p>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-tertiary">500g</div>
+<div class="text-[10px] font-bold text-on-surface-variant/40 uppercase">PER ACRE 🚜</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-tertiary/5 rounded-xl border border-tertiary/10">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-xs text-tertiary-container font-medium leading-relaxed">
+                                    🚨 Crucial for panicle initiation in wheat. Apply within the next 72 hours for maximum yield protection.
+                                </p>
+</div>
+<div class="flex items-center gap-4 pt-2">
+<button class="flex-1 bg-surface-container hover:bg-tertiary/5 text-tertiary font-bold py-3 rounded-lg text-sm transition-all border border-tertiary/10">Deficiency Guide 📖</button>
+<button class="bg-tertiary/10 text-tertiary p-3 rounded-lg hover:bg-tertiary/20 transition-all">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Organic Remedies Highlight (Alternative Section) -->
+<section class="bg-primary/5 rounded-xl p-8 md:p-12 relative overflow-hidden border border-primary/10">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="organic compost with earthworms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDP9kC-0HIxtxovnkTHpVcfAdArXzg2j8TeoJdk6rlZliGpHmA0VTSKTJIJmq35Hv6lt2a_9nBPTQrbrNCBPAETyNoaGhoXTln7-Mhuy1RFZ0UkmRBrwts1hNb6pK9nxTl1Dmg98wYrsKhfefcqGhQun80dfDfBhbXW4DTt4nM-FvSinrtw_mXkqFRSX2SDTjEnv2ogUQshHCk4e3twH7p1WhSHi4iMu9FQ7uR4sjTCo-P3W28CF_t7orujkgwGR_WKTog3KCvQYgQ"/>
+</div>
+<div class="relative z-10 max-w-xl">
+<span class="bg-white text-primary text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6 inline-block shadow-sm border border-primary/10">♻️ Sustainable Choice</span>
+<h2 class="font-headline font-extrabold text-3xl text-on-surface mb-6 leading-tight">Switch to Organic Wisdom 🍃</h2>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                        Our AI has analyzed your crop profile and suggests that a <strong>Jeevamrut</strong> soil drench could reduce your fertilizer cost by 40% this season.
+                    </p>
+<div class="space-y-4 mb-10">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">done_all</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Zero Chemical Residue 🚫</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Increases Soil Microbial Life 🧬</span>
+</div>
+</div>
+<button class="bg-primary text-white px-10 py-4 rounded-full font-headline font-extrabold text-sm shadow-xl shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                        View Organic Preparation Steps 📔
+                    </button>
+</div>
+</section>
+<!-- Knowledge Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between hover:border-primary/20 border border-transparent transition-all shadow-sm">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4">compost</span>
+<h4 class="font-headline font-bold text-xl mb-2">Compost Timing ⏳</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Learn the critical window for applying organic matter to maximize carbon sequestration.</p>
+</div>
+<a class="mt-6 text-primary font-bold text-xs uppercase tracking-widest inline-flex items-center gap-2 group" href="#">
+                        Read Article 📚
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between hover:border-primary/20 border border-transparent transition-all shadow-sm">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4">science</span>
+<h4 class="font-headline font-bold text-xl mb-2">NPK Interaction 🧪</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Understanding the Mulders' Chart and how nutrients can block or help each other.</p>
+</div>
+<a class="mt-6 text-primary font-bold text-xs uppercase tracking-widest inline-flex items-center gap-2 group" href="#">
+                        Explore Chart 📊
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between hover:border-primary/20 border border-transparent transition-all shadow-sm">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4">eco</span>
+<h4 class="font-headline font-bold text-xl mb-2">Microbial Density 🦠</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">How synthetic fertilizers impact soil health over a five-year crop cycle.</p>
+</div>
+<a class="mt-6 text-primary font-bold text-xs uppercase tracking-widest inline-flex items-center gap-2 group" href="#">
+                        View Data 📂
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+</div>
+<!-- Footer Meta -->
+<footer class="max-w-7xl mx-auto px-6 py-12 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-lg text-primary">verified</span>
+<span class="text-xs font-label text-on-surface">All recommendations are AI-validated by Fasal Intelligent Engine v4.2 ✅</span>
+</div>
+<div class="flex gap-8">
+<a class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40 hover:text-primary transition-all" href="#">Privacy</a>
+<a class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40 hover:text-primary transition-all" href="#">Support</a>
+<a class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40 hover:text-primary transition-all" href="#">API Access</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Fasal Assistant Chatbot Button -->
+<div class="fixed bottom-24 right-8 z-[100] md:bottom-8">
+<button class="bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all group relative">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+<div class="absolute right-full mr-4 bg-white text-primary font-bold px-4 py-2 rounded-lg shadow-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-primary/10">
+            Ask Fasal Assistant 👋
+        </div>
+<span class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-primary/10 flex justify-around py-4 z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Dash</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-[10px] font-bold">Advise</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="text-[10px] font-bold">Fertilizer</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-bold">Social</span>
+</button>
+</nav>
+</body></html>

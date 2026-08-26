@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yield Prediction | Fasal.AI</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f2f4f3",
+                    "surface-tint": "#059669", /* Emerald 600 */
+                    "surface-container-high": "#e6e9e8",
+                    "primary-fixed-dim": "#a7f3d0",
+                    "on-background": "#191c1c",
+                    "tertiary-fixed": "#ffddb5",
+                    "tertiary": "#825400",
+                    "error": "#ba1a1a",
+                    "primary": "#059669", /* Emerald 600 */
+                    "on-secondary-container": "#426e47",
+                    "on-surface-variant": "#3e4942",
+                    "on-secondary-fixed-variant": "#24502c",
+                    "on-secondary-fixed": "#002109",
+                    "surface-container": "#eceeed",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#ffffff",
+                    "on-primary-fixed-variant": "#064e3b",
+                    "on-tertiary-fixed-variant": "#643f00",
+                    "surface-variant": "#e1e3e2",
+                    "tertiary-container": "#a36a00",
+                    "on-primary-fixed": "#064e3b",
+                    "inverse-primary": "#6ee7b7",
+                    "on-tertiary-fixed": "#2a1800",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eff1f0",
+                    "surface-bright": "#f8faf9",
+                    "secondary": "#059669",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2e3131",
+                    "secondary-container": "#d1fae5",
+                    "primary-fixed": "#d1fae5",
+                    "secondary-fixed": "#d1fae5",
+                    "error-container": "#ffdad6",
+                    "background": "#ffffff",
+                    "primary-container": "#10b981", /* Emerald 500 */
+                    "on-surface": "#191c1c",
+                    "surface-container-highest": "#e1e3e2",
+                    "secondary-fixed-dim": "#a7f3d0",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d8dad9",
+                    "outline-variant": "#bdcac0",
+                    "outline": "#6e7a71",
+                    "tertiary-fixed-dim": "#ffb957",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        body {
+            background-color: #ffffff;
+            color: #191c1c;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/20">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation (Active: Yield Prediction) -->
+<aside class="hidden md:flex flex-col h-screen w-72 bg-[#f8faf9] sticky left-0 top-0 rounded-r-xl border-r border-outline-variant/20 overflow-y-auto">
+<div class="px-8 py-10">
+<img alt="Fasal.AI Logo" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhI8TtFtfKHU1fKC4p-TcOdiljmMibNe_cUI7YqpzqNXcQ85-w_WsWxOwepi1oQDp_1XrHRy2enh3jwva5h9X_1zecoqgMRRueeiPNFmx_lZnbI8V6FF68uyOvwMA_O5cQmzfgrHRgqLyTPIfB0eldS_uTlNhZ7Yt6fCOs-egUDayifuywe4WSflWb9STeneBu1fIpzopR2jAZnUUNAKsyWz4cqyzY9dLccJCZE8V4FC_F5q47LlOXf9xBBnJfY1xFtU22RtWQk5fY"/>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-xs font-medium tracking-wide">🏠 Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label text-xs font-medium tracking-wide">💡 Crop Advisory</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">shutter_speed</span>
+<span class="font-label text-xs font-medium tracking-wide">🔍 Disease Detection</span>
+</a>
+<!-- Active Item -->
+<div class="flex items-center gap-4 bg-primary text-white font-bold rounded-lg ml-2 shadow-sm px-6 py-4">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-label text-xs font-medium tracking-wide">📈 Yield Prediction</span>
+</div>
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label text-xs font-medium tracking-wide">🗺️ My Fields</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">agriculture</span>
+<span class="font-label text-xs font-medium tracking-wide">🔄 Rotation Planner</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-label text-xs font-medium tracking-wide">💰 Market Prices</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-label text-xs font-medium tracking-wide">🦟 Pest Alerts</span>
+</a>
+</nav>
+<div class="p-8">
+<button class="w-full py-4 bg-primary text-white rounded-full font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-lg">add</span>
+<span class="font-label text-xs tracking-wide">New Crop Cycle</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 relative overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="bg-white/80 backdrop-blur-xl sticky top-0 z-50 px-8 py-4 border-b border-outline-variant/10 flex justify-between items-center max-w-screen-2xl mx-auto w-full">
+<div class="flex flex-col">
+<h1 class="font-headline font-bold text-lg text-primary">Yield Intelligence ✨</h1>
+<p class="font-label text-xs text-on-surface-variant/60">Season Prediction Engine</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-6 items-center border-r border-outline-variant/20 pr-6">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">language</span>
+<select class="bg-transparent border-none text-xs font-label font-semibold focus:ring-0 p-0 pr-6">
+<option>English</option>
+<option>Hindi (हिन्दी)</option>
+<option>Marathi (मराठी)</option>
+<option>Punjabi (ਪੰਜਾਬੀ)</option>
+</select>
+</div>
+</div>
+<div class="hidden md:flex gap-8 font-label text-sm font-medium">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#">📜 History</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#">📊 Reports</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#">⚙️ Settings</a>
+</div>
+<div class="flex items-center gap-3 bg-primary/5 rounded-full pl-2 pr-4 py-1.5 cursor-pointer hover:bg-primary/10 transition-colors border border-primary/10">
+<div class="w-8 h-8 rounded-full bg-primary/20 overflow-hidden">
+<img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATGV7moZpwYnLU0_dUrNqluzB0LbVqjonAsE_e55S81Y63h4ahiOtweHY7RnH8xiDoktdQBxUkcJfb-R8hh0VC__6rWw3aP_mLfkKNjKyN4-Bz9p_wytWaFPKuV6DUUMDrofWO0pifTnQaGkKJ__V82v9KBhfkXS4ZNb4LhyPbAvLdzBwBEaZkkoXTrQV57V6686uJjPPYAr4LHO0EyFD0mcx5RicQwrxSi-MYnD-PF6hML7RJJ7S0CyjgGd7GIwxR9Uox_HpRbaye"/>
+</div>
+<span class="font-label text-xs font-semibold text-primary">Harvest Manager</span>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-12">
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Prediction Form Card -->
+<section class="lg:col-span-8 bg-white rounded-xl p-10 shadow-sm border border-outline-variant/20">
+<div class="mb-10">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-2">Calculate Potential Yield 🚜</h2>
+<p class="font-body text-on-surface-variant text-sm">Fill in your field details to generate a high-precision harvest forecast based on current soil and weather intelligence.</p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 ml-1">📍 State</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Maharashtra</option>
+<option>Punjab</option>
+<option>Karnataka</option>
+<option>Madhya Pradesh</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 ml-1">🏘️ District</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Nashik</option>
+<option>Pune</option>
+<option>Satara</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 ml-1">🌱 Crop Type</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Sugarcane</option>
+<option>Cotton</option>
+<option>Wheat</option>
+<option>Maize</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 ml-1">📅 Season</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Kharif (June - Oct)</option>
+<option>Rabi (Oct - March)</option>
+<option>Zaid (March - June)</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 ml-1">📏 Cultivation Area (Hectares)</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-primary/20" placeholder="e.g. 12.5" type="number"/>
+</div>
+</div>
+<button class="w-full py-5 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 flex items-center justify-center gap-3 hover:scale-[1.01] transition-transform" type="submit">
+<span class="material-symbols-outlined">analytics</span>
+                                Generate Yield Forecast
+                            </button>
+</form>
+</section>
+<!-- Side Stats -->
+<div class="lg:col-span-4 space-y-6 flex flex-col">
+<div class="bg-primary rounded-xl p-8 text-white flex-1 flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline text-lg font-bold opacity-80 mb-6">Market Outlook 📈</h3>
+<div class="space-y-4">
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-md">
+<div class="text-xs font-label opacity-70">Current Average Price</div>
+<div class="text-2xl font-headline font-extrabold">₹3,450 <span class="text-sm font-normal opacity-70">/ Quintal</span></div>
+</div>
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-md border border-white/20">
+<div class="text-xs font-label opacity-70">Predicted Price (Harvest)</div>
+<div class="text-2xl font-headline font-extrabold text-emerald-100">₹3,820 <span class="text-sm font-normal opacity-70">/ Quintal</span></div>
+</div>
+</div>
+</div>
+<div class="mt-8 z-10">
+<span class="font-label text-[10px] uppercase font-bold tracking-widest bg-white/20 px-2 py-1 rounded">Trend: Upward 🚀</span>
+</div>
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-surface-container rounded-xl p-8 space-y-4">
+<h3 class="font-headline text-sm font-bold text-on-surface-variant">Weather Signal ☀️</h3>
+<div class="flex items-center gap-4">
+<div class="p-3 bg-white rounded-full text-primary">
+<span class="material-symbols-outlined">wb_sunny</span>
+</div>
+<div>
+<div class="font-headline font-bold text-lg">Optimal</div>
+<div class="font-label text-xs text-on-surface-variant">Low frost risk for Rabi season ✅</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Results Panel -->
+<div class="space-y-8">
+<div class="flex items-end justify-between px-2">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Prediction Results 🎯</h2>
+<button class="font-label text-sm text-primary font-bold flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-base">download</span> Export PDF
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-white rounded-xl p-10 border border-outline-variant/20 shadow-sm flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-shrink-0 text-center space-y-2">
+<div class="relative inline-block">
+<svg class="w-48 h-48 transform -rotate-90">
+<circle class="text-surface-container" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="100.5" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline text-4xl font-extrabold text-on-surface">820</span>
+<span class="font-label text-xs text-on-surface-variant font-medium">Quintals</span>
+</div>
+</div>
+<div class="font-headline font-bold text-primary mt-2">Estimated Yield 🌾</div>
+</div>
+<div class="flex-1 space-y-8">
+<div>
+<div class="flex justify-between items-center mb-3">
+<span class="font-label text-xs font-bold text-on-surface-variant/70 uppercase tracking-widest">Confidence Score 🛡️</span>
+<span class="font-headline font-bold text-primary">High (92%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[92%]"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+<div class="text-[10px] font-label font-bold text-on-surface-variant/50 uppercase mb-1">Regional Avg. 🌏</div>
+<div class="text-xl font-headline font-bold">710 <span class="text-xs font-medium opacity-60">Qt</span></div>
+<div class="text-xs font-label text-primary font-bold mt-1">+15% vs Avg.</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+<div class="text-[10px] font-label font-bold text-on-surface-variant/50 uppercase mb-1">Max Potential 🚀</div>
+<div class="text-xl font-headline font-bold">945 <span class="text-xs font-medium opacity-60">Qt</span></div>
+<div class="text-xs font-label text-on-surface-variant/60 font-medium mt-1">With Irrigation</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 rounded-xl p-8 relative overflow-hidden border border-primary/10">
+<h3 class="font-headline font-bold text-on-surface mb-6">Contributing Factors 🔍</h3>
+<ul class="space-y-6 relative z-10">
+<li class="flex items-start gap-4">
+<div class="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
+<div>
+<span class="font-label text-xs font-bold block mb-1">Soil Health 🌱</span>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">High nitrogen levels detected in Nashik cluster support growth.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0 opacity-60"></div>
+<div>
+<span class="font-label text-xs font-bold block mb-1">Precipitation 🌧️</span>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">Normal monsoon pattern expected during early phase.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0 opacity-30"></div>
+<div>
+<span class="font-label text-xs font-bold block mb-1">Pest Resilience 🛡️</span>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">Low incidence of local stem-borer reported locally.</p>
+</div>
+</li>
+</ul>
+<div class="absolute right-0 bottom-0 opacity-10">
+<span class="material-symbols-outlined text-[120px] rotate-12 text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-10 border border-outline-variant/20 shadow-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Regional Performance Benchmark 📊</h3>
+<p class="font-label text-xs text-on-surface-variant">Last 5 Harvest Cycles: Maharashtra District Comparison</p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary"></span> Your Field</span>
+<span class="flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-surface-container-highest"></span> District Avg.</span>
+</div>
+</div>
+<div class="flex items-end gap-4 h-64 w-full">
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full flex justify-center gap-1.5 items-end h-full">
+<div class="w-6 bg-surface-container-highest rounded-t-sm h-[60%]"></div>
+<div class="w-6 bg-primary rounded-t-sm h-[85%] group-hover:h-[88%] transition-all"></div>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface-variant/70">2019</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full flex justify-center gap-1.5 items-end h-full">
+<div class="w-6 bg-surface-container-highest rounded-t-sm h-[55%]"></div>
+<div class="w-6 bg-primary rounded-t-sm h-[70%] group-hover:h-[75%] transition-all"></div>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface-variant/70">2020</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full flex justify-center gap-1.5 items-end h-full">
+<div class="w-6 bg-surface-container-highest rounded-t-sm h-[65%]"></div>
+<div class="w-6 bg-primary rounded-t-sm h-[90%] group-hover:h-[95%] transition-all"></div>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface-variant/70">2021</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full flex justify-center gap-1.5 items-end h-full">
+<div class="w-6 bg-surface-container-highest rounded-t-sm h-[40%]"></div>
+<div class="w-6 bg-primary rounded-t-sm h-[45%] group-hover:h-[50%] transition-all"></div>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface-variant/70">2022</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full flex justify-center gap-1.5 items-end h-full">
+<div class="w-6 bg-surface-container-highest rounded-t-sm h-[68%]"></div>
+<div class="w-6 bg-primary-container rounded-t-sm h-[98%] group-hover:scale-y-105 transition-all"></div>
+</div>
+<span class="font-label text-[10px] font-bold text-primary">2023 (Predicted)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Strategic Recommendations Section -->
+<div class="bg-primary/5 rounded-xl p-10 flex flex-col md:flex-row gap-12 items-center border border-primary/10">
+<div class="w-full md:w-1/3">
+<div class="rounded-xl overflow-hidden aspect-square shadow-xl rotate-3 border-4 border-white">
+<img alt="Yield Optimization" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASKqg0b0nsYUDZf9KTTnE4g2vLk9JLADbJ--JAghKr3_nVLpeM-MKcUPp7wwRF9prKDUqZDFvwmBZfmCwmu908mEmtCvSANejARShk5qT0NTbTJmRd-9yyj9G-iefS-2KYaU0VZlhO4qlvctoGg0iKi8CTDVvA7ZKsOSXl_2BeB8KvKh4ChQS9mAJiI5AzynPIwQ5I-MqORu_LLGd7daRHU7VqrNRgX-zOBN-meHWYJS7pe-I1UCIkAfn28gyapeiWhpoBOYwQnZMb"/>
+</div>
+</div>
+<div class="flex-1 space-y-6">
+<div class="inline-block bg-primary text-white font-label text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Growth Blueprint 🌿</div>
+<h2 class="font-headline text-3xl font-bold text-on-surface">Maximize Your Harvest 🚀</h2>
+<p class="font-body text-on-surface-variant leading-relaxed">Based on your prediction of <span class="font-bold text-primary">820 Quintals</span>, our AI suggests a split-application of potassium-based fertilizer in week 14 to prevent late-season lodging. Early harvest is recommended by Oct 12th for peak sucrose content.</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-white font-bold py-3 px-8 rounded-full shadow-md hover:scale-105 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                                Apply Strategy
+                            </button>
+<button class="bg-white text-on-surface-variant border border-outline-variant font-bold py-3 px-8 rounded-full hover:bg-surface-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">psychology</span>
+                                Talk to Agronomist
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Footer -->
+<footer class="mt-20 px-8 py-12 border-t border-outline-variant/20 bg-surface-container-low/30">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-headline font-black text-primary/40 text-xl tracking-tight">Fasal.AI 🍃</div>
+<div class="flex gap-10 font-label text-xs font-bold text-on-surface-variant/40 uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<div class="text-[10px] font-label text-on-surface-variant/40">© 2024 Intelligent Ag Systems. All rights reserved.</div>
+</div>
+</footer>
+</main>
+<!-- Floating Action Button: Fasal Assistant -->
+<div class="fixed bottom-24 right-8 z-[60] md:bottom-8">
+<button class="group relative flex items-center justify-center bg-primary text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-all duration-300">
+<div class="relative">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-300"></span>
+</span>
+</div>
+<!-- Chatbot tooltip/hint -->
+<div class="absolute bottom-full right-0 mb-4 w-64 bg-white p-4 rounded-xl shadow-xl border border-outline-variant/20 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all pointer-events-none">
+<p class="text-xs text-on-surface-variant mb-2">👋 Hi! I'm your AI farm assistant. How can I help you today?</p>
+<div class="flex gap-2">
+<span class="text-[10px] px-2 py-1 bg-surface-container rounded-full text-primary font-bold">Soil help?</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container rounded-full text-primary font-bold">Price trends?</span>
+</div>
+</div></button>
+</div>
+<!-- Mobile Navigation -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-outline-variant/10 z-[100] px-6 py-3 flex justify-between items-center shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-label font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-label font-bold">Fields</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<div class="bg-primary/10 p-2 rounded-xl mb-1">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<span class="text-[10px] font-label font-bold">Predict</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-[10px] font-label font-bold">Community</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label font-bold">Profile</span>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f3",
+                        "surface-tint": "#006c47",
+                        "surface-container-high": "#e6e9e8",
+                        "primary-fixed-dim": "#71dba6",
+                        "on-background": "#191c1c",
+                        "tertiary-fixed": "#ffddb5",
+                        "tertiary": "#825400",
+                        "error": "#ba1a1a",
+                        "primary": "#006b47",
+                        "on-secondary-container": "#426e47",
+                        "on-surface-variant": "#3e4942",
+                        "on-secondary-fixed-variant": "#24502c",
+                        "on-secondary-fixed": "#002109",
+                        "surface-container": "#eceeed",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "on-primary-fixed-variant": "#005235",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "surface-variant": "#e1e3e2",
+                        "tertiary-container": "#a36a00",
+                        "on-primary-fixed": "#002113",
+                        "inverse-primary": "#71dba6",
+                        "on-tertiary-fixed": "#2a1800",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f0",
+                        "surface-bright": "#f8faf9",
+                        "secondary": "#3c6842",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3131",
+                        "secondary-container": "#bdefbe",
+                        "primary-fixed": "#8df7c1",
+                        "secondary-fixed": "#bdefbe",
+                        "error-container": "#ffdad6",
+                        "background": "#f8faf9",
+                        "primary-container": "#00875a",
+                        "on-surface": "#191c1c",
+                        "surface-container-highest": "#e1e3e2",
+                        "secondary-fixed-dim": "#a2d3a4",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dad9",
+                        "outline-variant": "#bdcac0",
+                        "outline": "#6e7a71",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8faf9",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #bdcac0; border-radius: 10px; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-full py-8 space-y-2 bg-[#eceeed] dark:bg-emerald-950 h-screen w-72 rounded-r-[3rem] sticky left-0 top-0 tonal-shift background-surface-container flat no shadows">
+<div class="px-8 mb-8"><img alt="Fasal.AI Logo" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugFXN8fEW3OfyGclsuaS8XdDGkzF8vXIRE6cIRTIh61KP0qaey34s8-1LeicZyUDphnfL0acGpwD8O32aMWMUcDcewl2iw6bsRT4DdQDs8dUDRN4g7w-X3VGhGbyiK6mQaq5ZLDV2nMtEwM8VYo4NrSd9462V80GYR_12j5XaAUtGP9S3cANx_F_ZMM0gWQACH3XzKLk9eBRrysJTI7DtD24tw6P8LzVEsLN_d5kOsTW5JsKb8vY0-BR94_Mw0dzHOtZUAm8GpXKuE"/></div>
+<nav class="flex-1 overflow-y-auto space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center space-x-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-xs tracking-wide">🏠 Dashboard</span>
+</a>
+<!-- Crop Advisory -->
+<a class="flex items-center space-x-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-inter text-xs tracking-wide">🧠 Crop Advisory</span>
+</a>
+<!-- Disease Detection -->
+<a class="flex items-center space-x-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shutter_speed">shutter_speed</span>
+<span class="font-inter text-xs tracking-wide">🔍 Disease Detection</span>
+</a>
+<!-- Community (ACTIVE) -->
+<a class="flex items-center space-x-3 bg-[#ffffff] dark:bg-emerald-900 text-emerald-800 dark:text-emerald-50 font-bold rounded-l-full ml-4 shadow-sm px-6 py-3 Active: opacity-90 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-inter text-xs tracking-wide">👥 Community</span>
+</a>
+<!-- Other Items -->
+<a class="flex items-center space-x-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-inter text-xs tracking-wide">📈 Market Prices</span>
+</a>
+<a class="flex items-center space-x-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-xs tracking-wide">👤 Profile</span>
+</a>
+</nav>
+<!-- Language Selector -->
+<div class="px-6 mb-4">
+<div class="relative group">
+<button class="flex items-center justify-between w-full px-4 py-2 bg-white/50 dark:bg-emerald-900/50 rounded-xl text-xs font-label text-emerald-900 dark:text-emerald-100 border border-emerald-900/10 transition-all hover:bg-white">
+<span class="flex items-center gap-2">🌐 English</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="absolute bottom-full left-0 w-full mb-2 hidden group-hover:block bg-white dark:bg-emerald-800 rounded-xl shadow-lg border border-emerald-900/10 overflow-hidden z-50">
+<a class="block px-4 py-2 text-xs hover:bg-emerald-50 dark:hover:bg-emerald-700" href="#">हिन्दी (Hindi)</a>
+<a class="block px-4 py-2 text-xs hover:bg-emerald-50 dark:hover:bg-emerald-700" href="#">ਪੰਜਾਬੀ (Punjabi)</a>
+<a class="block px-4 py-2 text-xs hover:bg-emerald-50 dark:hover:bg-emerald-700" href="#">తెలుగు (Telugu)</a>
+</div>
+</div>
+</div>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-headline font-bold text-sm shadow-sm hover:translate-x-1 transition-transform">
+                    🌱 New Crop Cycle
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col relative overflow-hidden bg-surface">
+<!-- Top Header -->
+<header class="bg-white/80 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto z-50 sticky top-0 no-border tonal-shift via-bg-surface-container">
+<div class="flex items-center gap-4">
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-lg text-emerald-800 tracking-tight">Community Hub 🏘️</h2>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest font-bold">1,402 Growers Online</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-outline">search</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-outline">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-primary-container/20">
+<img class="w-full h-full object-cover" data-alt="portrait of a confident modern farmer in a wheat field at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAje3RMqiN1b3DTcXFLUJVJFzXd3DmA_P_ugQ5QFyQe6FjUQoLZVH_3ArQjBHRq-wCjVHX8Hxp0lfFLMbtIBK9Q83KERGz9PPIfaF3GpCZBOFqlYI9xmf_J0Zj7Y-adAUiEbCRdx8ivFUKVhH1EKvAfE6mZYXC4qiJFCiDyw0joAOLpKdYx86y5xKnxWrw9-tnFH38zpiPoRsyu0Ndv157cFTYl7XR6AL0tCOGOk_V51TuMsMlFhiY3obnMbFGk_G1Re73GxYkF-Xvb"/>
+</div>
+</div>
+</header>
+<!-- Chat Interface Area -->
+<div class="flex-1 overflow-y-auto px-8 pb-40 pt-6 space-y-8 max-w-5xl mx-auto w-full">
+<!-- Date Divider -->
+<div class="flex justify-center">
+<span class="px-4 py-1 bg-surface-container text-outline text-[10px] font-label font-bold rounded-full uppercase tracking-tighter">📅 Today, Oct 24</span>
+</div>
+<!-- Message Received -->
+<div class="flex items-start gap-4 max-w-2xl">
+<div class="flex-shrink-0 mt-1">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="smiling female agricultural researcher in a clean laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLFdFTSFKHlGXgXdNkfWBiZB1WSiHmPz4IgL0GTSu72sIboH4lYwfaBm93cOAhyO6WYkAAmjIreMtE6zNdZ5Kv9r59M8V5xF1yzByzKAB_rEU7r0ufJbWn-ki-D9DPfNBVVNPhXR1jx75LuNOVLPQbXWf6d8lWcx0AIf4KgViUUhegInqLSHmi4LvLqY8qJ1bmrEqJ-7yy9shH4oJXfpHxVxf5TIbZlaUIw5LkNrXM1YAHDhv6gXk76UQkhPnKQiAEhk5TY_3TTIuP"/>
+</div>
+<div class="space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-bold text-sm text-primary">Dr. Sarah Jenkins 👩‍🔬</span>
+<span class="text-[10px] font-label text-outline/60">09:42 AM</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-tr-xl rounded-b-xl text-sm leading-relaxed text-on-surface-variant">
+                            Has anyone noticed a slight yellowing in their Ravi variety wheat early this season? The soil moisture levels in Zone B seem consistent with the prediction.
+                        </div>
+</div>
+</div>
+<!-- Message Sent -->
+<div class="flex items-start gap-4 max-w-2xl ml-auto flex-row-reverse">
+<div class="flex-shrink-0 mt-1">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="portrait of a confident modern farmer in a wheat field at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOnbOjjPxO7wGQnGQxwOmoBreGVAra2s2yM4aK4ygNpRQ6oPLsqW6DnxqRxGe7PbVxD2aAxMKkFT7ml-jWTGh7EyaGlZb8sVwQlOrnO7Q2heSpKPEDJjd7JPtjya8ISTRBkdo2SHtS2Xcddc-HaAFLDUkFmnx00SAqVL8FxKh6EQED_opBxoJFwMb-mvoO61tyd_x0hVEwyxV0z_bYOBCPz_F346-clTOxQhrFL4fZ35Eck9PhnilWt4qJ3qWT2EDto93tU6-uuBH8"/>
+</div>
+<div class="space-y-1 text-right">
+<div class="flex items-baseline gap-2 justify-end">
+<span class="text-[10px] font-label text-outline/60">09:45 AM</span>
+<span class="font-headline font-bold text-sm text-secondary">Me 🚜</span>
+</div>
+<div class="bg-primary text-on-primary p-4 rounded-tl-xl rounded-b-xl text-sm leading-relaxed shadow-lg shadow-primary/10">
+                            I'm seeing it too, Sarah. My sensor data suggests a minor nitrogen dip after the last heavy rain. I'm following the "Rotation Planner" suggestion to supplement.
+                        </div>
+</div>
+</div>
+<!-- Image Message Received -->
+<div class="flex items-start gap-4 max-w-2xl">
+<div class="flex-shrink-0 mt-1">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="close-up of a professional woman with a warm friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKlOLTZVaBXeNDi0vzAqBRQLVmqseiYtIq-emATK_m3pwBaor58tMpIRKXtbq2w-5rNv1gll9_XY8CSl-wHD5P709O3Md_2t079w7datf4dNRiMVFF6wLp5CDBw3jmi171oTjJzRtq86MiarISQXF-LiyMhqWnItHWTRXxd3yK5OaHntDBxbycCARuFjUWZ5GTUUwgqJFEC4sl0zLosfmTxRWb4vSAwE8qfJa2hU4bVnHNmtsN9vmophnPq8UcdFYHdocL1lR2pUY9"/>
+</div>
+<div class="space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-bold text-sm text-primary">Elena Rodriguez 🌾</span>
+<span class="text-[10px] font-label text-outline/60">10:15 AM</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-tr-xl rounded-b-xl overflow-hidden shadow-sm">
+<img class="w-full h-48 object-cover rounded-lg mb-2" data-alt="macro photograph of healthy green wheat leaves with morning dew in a field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvIxDsPWBx8SDqny4a3Mbkk1qiVYkzkgRjDEHsBdSZwi7-JS4xyfXeShcly_xQQw27fByAlVTQ8YQqF125-zD0RkntOIBxM3nkg-mvmytxocOsF2C3GYFKr_BYpXyU8mWD0ekZ8nmrwQbD4vV5rD7rfXI52-tqZL1s7XZjXwcUiIqKwOqj2-5fKOVMMWZkp0xenTPyDTw7VfaXbVNkRxJl9q9Rj5W_YyVuyPWCVdwnFg0tbDSL0r-pn8T770ff97jCJ9aYjDajEdhQ"/>
+<div class="px-2 py-1 text-sm text-on-surface-variant">
+                                Just updated my field profile. The Fasal.AI "Disease Detection" gave me a clean bill of health! ✅
+                            </div>
+</div>
+</div>
+</div>
+<!-- Advisory Insight Card (Embedded in Chat) -->
+<div class="flex justify-center py-4">
+<div class="bg-secondary-container/30 border border-secondary/10 p-6 rounded-xl max-w-lg w-full flex items-center gap-6">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 text-on-secondary">
+<span class="material-symbols-outlined" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline font-bold text-secondary text-sm">💡 Community Insight</h4>
+<p class="text-xs text-on-secondary-container/80 leading-relaxed italic">78% of growers in your region are currently planting 'Monsoon-Hardy' seeds based on recent yield predictions.</p>
+</div>
+</div>
+</div>
+<!-- Message Received -->
+<div class="flex items-start gap-4 max-w-2xl">
+<div class="flex-shrink-0 mt-1">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="portrait of a middle-aged man with a friendly smile wearing a denim shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD61mkupqZi12S2lBSu7dzXNXdViYkYTJY2Nt0e3IDVkHq0PL1S2d2k1-Pq6tdkeWCZ7hzMQIWfo0NnZEra613uwdxLd92w7v0ADONUXir3eXMvBs8Zkn5piN7rHq5PkqPuDsSd4f2_nJct2tYpC1rRQuwGXUZCVs-jzmEup5ZgaKBHuTRavg1WbeVY2uwyA-NfSu7EehNZUPLmT7tYsYGKQgghYOYRQiX5XmsfOw-eq5v6X84dcIFBv21b_AmhL9cUwoxyl2-kdNtp"/>
+</div>
+<div class="space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-bold text-sm text-primary">Vikram Singh 🧔</span>
+<span class="text-[10px] font-label text-outline/60">11:02 AM</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-tr-xl rounded-b-xl text-sm leading-relaxed text-on-surface-variant">
+                            Checking in from the North Plains. Market prices for premium wheat seem to be stabilizing. Great time to review the 'Market Prices' tab.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Fasal Assistant Chatbot Button -->
+<div class="fixed bottom-36 right-8 z-[60]">
+<button class="group relative flex items-center gap-3 bg-white border-2 border-primary text-primary px-6 py-4 rounded-full shadow-2xl hover:bg-primary hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-headline font-bold text-sm">Ask Fasal Assistant</span>
+<div class="absolute -top-2 -right-1 w-4 h-4 bg-tertiary rounded-full animate-bounce"></div>
+</button>
+</div>
+<!-- Composer (Bottom Sticky) -->
+<div class="absolute bottom-0 left-0 right-0 p-8 glass-panel border-t border-outline-variant/10">
+<div class="max-w-5xl mx-auto">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl shadow-emerald-900/5 flex items-end p-2 gap-2 border border-outline-variant/10">
+<!-- Attachment Button -->
+<button class="p-3 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<!-- Input Field -->
+<div class="flex-1 pb-2">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm font-label placeholder:text-outline-variant py-2 max-h-32 resize-none" placeholder="Share an update or ask the community..." rows="1"></textarea>
+</div>
+<!-- Mic/Voice Support -->
+<button class="p-3 text-outline hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<!-- Send Button -->
+<button class="p-3 bg-primary text-on-primary rounded-xl flex items-center justify-center shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<div class="flex justify-between items-center px-4 mt-3">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-[10px] font-label font-bold text-outline uppercase tracking-wider hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                📍 Location
+                            </button>
+<button class="flex items-center gap-1.5 text-[10px] font-label font-bold text-outline uppercase tracking-wider hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">photo_library</span>
+                                🖼️ Media
+                            </button>
+</div>
+<p class="text-[10px] font-label text-outline/50 italic">Draft saved 2m ago</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Sidebar (Community Stats/Online Users) -->
+<aside class="hidden xl:flex flex-col w-80 bg-surface-container-low/50 border-l border-outline-variant/20 p-8 space-y-8 overflow-y-auto">
+<div>
+<h3 class="font-headline font-extrabold text-on-background text-lg mb-6">Expert Contributors 🏆</h3>
+<div class="space-y-6">
+<!-- User 1 -->
+<div class="flex items-center gap-4 group">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a woman in a lab coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXNEQ_KmEtODOF5xavBR87LScU3jn8iGh-lqAPin_x099tY0QkUnhHlQpSIsn_ugibZpcNc22QLIPBJh6ss80Eke2jirYUKSqBIv8vENJVH7crHp7UHppLd9XJ0BwDOy-Wb19JcRMjFDAS3Q1yA_kVwu2SW4Fwg0BUIQsunxtBzm2L-zfV6UI8lAmTYRMuutfeNBztorViNYA3wkiGDjHZ510taLiF6ruVwoyaWbIglHhMj926ILeOW3CTgmJnYR9C8OE9_oFJP_ti"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="font-headline font-bold text-sm text-on-surface">Dr. Sarah Jenkins</p>
+<p class="text-[10px] font-label text-outline uppercase tracking-tighter">Soil Specialist 🧪</p>
+</div>
+<span class="material-symbols-outlined text-primary-container opacity-0 group-hover:opacity-100 transition-opacity">verified</span>
+</div>
+<!-- User 2 -->
+<div class="flex items-center gap-4 group">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="professional male scientist with glasses smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDIUpSehzRi8skKs4qq5xNRtNS5ffas733fqZFZ8KO7xmkSufKW5S8RCUyYDk9wiaNKJpr9LtC5kj2QmTSNAX-2eugBNT4BVMNB9dcg0J3LsZ4CxcZO-TkUw-1kXBA49UoxrLr3LYiaWeLeyThP9zfurepFlzT_jJyzClhK7boMvJBzzWoAVXrDiQ5HwfUz1qdhUFmwFG0L8yULszhuJCH0sdB3Wcb5Y_iIzp_WAa8ID-wLM1pgAKM5GXm7twJHp1FAaXZfiurhT3F"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="font-headline font-bold text-sm text-on-surface">Mark Thompson</p>
+<p class="text-[10px] font-label text-outline uppercase tracking-tighter">Yield Analyst 📊</p>
+</div>
+<span class="material-symbols-outlined text-primary-container opacity-0 group-hover:opacity-100 transition-opacity">verified</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/30">
+<h3 class="font-headline font-extrabold text-on-background text-lg mb-6">Trending Topics 🔥</h3>
+<div class="space-y-3">
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors cursor-pointer">
+<p class="text-xs font-label text-primary font-bold mb-1">#NitrogenManagement 🌿</p>
+<p class="text-[10px] text-outline">243 growers discussing</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors cursor-pointer">
+<p class="text-xs font-label text-primary font-bold mb-1">#RaviWheat2024 🌾</p>
+<p class="text-[10px] text-outline">156 growers discussing</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors cursor-pointer">
+<p class="text-xs font-label text-primary font-bold mb-1">#IrrigationAutomation 💧</p>
+<p class="text-[10px] text-outline">89 growers discussing</p>
+</div>
+</div>
+</div>
+<!-- Ad/Promo Space -->
+<div class="mt-auto bg-primary rounded-xl p-6 text-on-primary relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline font-bold text-lg mb-2">Invite Friends 👫</h4>
+<p class="text-xs text-primary-fixed/80 leading-relaxed mb-4">Grow the ecosystem together. Get 3 months of Premium for every 5 referrals.</p>
+<button class="w-full py-2 bg-on-primary text-primary font-label font-bold text-[10px] uppercase tracking-widest rounded-lg">Generate Link</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-7xl text-white/10 rotate-12" data-icon="diversity_3" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+</aside>
+</div>
+</body></html>

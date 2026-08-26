@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fasal.AI | Profile &amp; Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f2f4f3",
+                      "surface-tint": "#006c47",
+                      "surface-container-high": "#e6e9e8",
+                      "primary-fixed-dim": "#71dba6",
+                      "on-background": "#191c1c",
+                      "tertiary-fixed": "#ffddb5",
+                      "tertiary": "#825400",
+                      "error": "#ba1a1a",
+                      "primary": "#006b47",
+                      "on-secondary-container": "#426e47",
+                      "on-surface-variant": "#3e4942",
+                      "on-secondary-fixed-variant": "#24502c",
+                      "on-secondary-fixed": "#002109",
+                      "surface-container": "#eceeed",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#ffffff",
+                      "on-primary-fixed-variant": "#005235",
+                      "on-tertiary-fixed-variant": "#643f00",
+                      "surface-variant": "#e1e3e2",
+                      "tertiary-container": "#a36a00",
+                      "on-primary-fixed": "#002113",
+                      "inverse-primary": "#71dba6",
+                      "on-tertiary-fixed": "#2a1800",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#eff1f0",
+                      "surface-bright": "#f8faf9",
+                      "secondary": "#3c6842",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#2e3131",
+                      "secondary-container": "#bdefbe",
+                      "primary-fixed": "#8df7c1",
+                      "secondary-fixed": "#bdefbe",
+                      "error-container": "#ffdad6",
+                      "background": "#f8faf9",
+                      "primary-container": "#00875a",
+                      "on-surface": "#191c1c",
+                      "surface-container-highest": "#e1e3e2",
+                      "secondary-fixed-dim": "#a2d3a4",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#d8dad9",
+                      "outline-variant": "#bdcac0",
+                      "outline": "#6e7a71",
+                      "tertiary-fixed-dim": "#ffb957",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f8faf9",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Manrope"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8faf9;
+            color: #191c1c;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-72 rounded-r-xl sticky left-0 top-0 bg-[#eceeed] dark:bg-emerald-950 py-8 space-y-2 z-40">
+<div class="px-8 mb-8">
+<h1 class="font-headline font-black text-emerald-800 dark:text-emerald-100 text-2xl tracking-tight">
+<img alt="Fasal.AI Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugFXN8fEW3OfyGclsuaS8XdDGkzF8vXIRE6cIRTIh61KP0qaey34s8-1LeicZyUDphnfL0acGpwD8O32aMWMUcDcewl2iw6bsRT4DdQDs8dUDRN4g7w-X3VGhGbyiK6mQaq5ZLDV2nMtEwM8VYo4NrSd9462V80GYR_12j5XaAUtGP9S3cANx_F_ZMM0gWQACH3XzKLk9eBRrysJTI7DtD24tw6P8LzVEsLN_d5kOsTW5JsKb8vY0-BR94_Mw0dzHOtZUAm8GpXKuE"/>
+</h1>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 custom-scrollbar">
+<div class="space-y-1">
+<a class="flex items-center gap-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-sm">🏠 Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label text-sm">🧠 Crop Advisory</span>
+</a>
+<a class="flex items-center gap-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label text-sm">🗺️ My Fields</span>
+</a>
+<a class="flex items-center gap-3 text-emerald-900/70 dark:text-emerald-100/70 px-6 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label text-sm">💬 Feedback</span>
+</a>
+<div class="pt-4 pb-2 px-6">
+<div class="h-px bg-outline-variant/30 w-full"></div>
+</div>
+<a class="flex items-center gap-3 bg-[#ffffff] dark:bg-emerald-900 text-emerald-800 dark:text-emerald-50 font-bold rounded-l-full ml-4 shadow-sm px-6 py-3 transition-opacity active:opacity-90" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label text-sm">👤 Profile</span>
+</a>
+</div>
+</nav>
+<div class="px-8 mt-auto">
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-headline font-bold text-sm shadow-sm hover:bg-primary-container transition-all">
+                🌱 New Crop Cycle
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 min-w-0 relative">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-emerald-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm shadow-emerald-900/5">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="md:hidden">
+<span class="text-2xl font-black tracking-tight text-emerald-800 dark:text-emerald-100">
+<img alt="Fasal.AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugFXN8fEW3OfyGclsuaS8XdDGkzF8vXIRE6cIRTIh61KP0qaey34s8-1LeicZyUDphnfL0acGpwD8O32aMWMUcDcewl2iw6bsRT4DdQDs8dUDRN4g7w-X3VGhGbyiK6mQaq5ZLDV2nMtEwM8VYo4NrSd9462V80GYR_12j5XaAUtGP9S3cANx_F_ZMM0gWQACH3XzKLk9eBRrysJTI7DtD24tw6P8LzVEsLN_d5kOsTW5JsKb8vY0-BR94_Mw0dzHOtZUAm8GpXKuE"/>
+</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label text-sm text-emerald-900/60 dark:text-emerald-100/60 hover:text-emerald-700 transition-all" href="#">Home</a>
+<a class="font-label text-sm text-emerald-900/60 dark:text-emerald-100/60 hover:text-emerald-700 transition-all" href="#">About</a>
+<a class="font-label text-sm text-emerald-900/60 dark:text-emerald-100/60 hover:text-emerald-700 transition-all" href="#">Contact</a>
+<a class="font-label text-sm text-emerald-900/60 dark:text-emerald-100/60 hover:text-emerald-700 transition-all" href="#">Predict</a>
+</div>
+<div class="flex items-center gap-4">
+<!-- Language Selector -->
+<div class="relative group">
+<button class="flex items-center gap-2 bg-surface-container rounded-full px-3 py-2 text-sm font-semibold hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+<span class="font-label">English</span>
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</button>
+<div class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border border-outline-variant/20 hidden group-hover:block z-[60]">
+<ul class="py-2 text-sm">
+<li class="px-4 py-2 hover:bg-emerald-50 cursor-pointer text-primary font-bold">English</li>
+<li class="px-4 py-2 hover:bg-emerald-50 cursor-pointer">हिंदी (Hindi)</li>
+<li class="px-4 py-2 hover:bg-emerald-50 cursor-pointer">ਪੰਜਾਬੀ (Punjabi)</li>
+</ul>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="location_on">location_on</span>
+<span class="font-label text-xs font-semibold">📍 Punjab, IN</span>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label text-sm font-bold hover:scale-95 active:duration-150 transition-all">
+                        Login
+                    </button>
+</div>
+</div>
+</header>
+<section class="max-w-7xl mx-auto p-8 space-y-12">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h2 class="text-4xl font-headline font-extrabold text-on-background tracking-tight">Account Intelligence ⚙️</h2>
+<p class="text-on-surface-variant font-label mt-2">Manage your agricultural profile and system preferences.</p>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Profile Management Card (Main) -->
+<div class="lg:col-span-8 bg-white rounded-xl p-8 border border-outline-variant/10 shadow-sm">
+<div class="flex items-center gap-6 mb-10">
+<div class="relative">
+<img alt="User Profile" class="w-24 h-24 rounded-full object-cover border-4 border-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJfF2xBWAdIwY-FEYHCm1QlwKnW9mfhy79CoX9QgsObjhSgXXJK-q0PfSRFGwVrEa9F-F2VVVKrAnFOQAlIhTIMbHp1uI_BqYh1sP9gAiNROTKqBjiyrqXqONgduyzxd60EU8Y8sBMn2wmeBHalX62Ko-hLUy6F_zzM97ZNkQurPf6DexICKxpwUs2ZotHJxXs3CCFu2QTPmPxhpYSx3eHIWKgAiAinEdUeJN-bgez4MDKS-IZcWCMlfqCrXzgVBg1pK2ISQrCWjLP"/>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div>
+<h3 class="font-headline font-bold text-2xl">Arjun Singh 🌾</h3>
+<p class="text-on-surface-variant text-sm font-label">Member since March 2023 • Premium Tier 🌟</p>
+</div>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Full Name 👤</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-4 font-body focus:ring-2 focus:ring-primary transition-all" type="text" value="Arjun Singh"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Farm Size (Acres) 🚜</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-4 font-body focus:ring-2 focus:ring-primary transition-all" type="number" value="45"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Primary Crops 🌾</label>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">🌾 Wheat</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">🍚 Rice</span>
+<button class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="add">add</span> Add Crop
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">Location 📍</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-4 font-body focus:ring-2 focus:ring-primary transition-all" type="text" value="Ludhiana, Punjab"/>
+</div>
+</div>
+<div class="pt-6">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-sm shadow-md hover:bg-primary-container transition-all flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-sm" data-icon="save">save</span>
+                                Update Profile
+                            </button>
+</div>
+</form>
+</div>
+<!-- Side Stats / Quick Actions -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Field Visualizer Card -->
+<div class="bg-primary text-white rounded-xl p-8 relative overflow-hidden h-64 shadow-xl">
+<div class="relative z-10">
+<h4 class="font-headline font-bold text-xl">Land Intelligence 📡</h4>
+<p class="text-white/80 text-sm mt-1">Total coverage: 45.2 Hectares</p>
+<div class="mt-8 flex items-baseline gap-1">
+<span class="text-4xl font-black">12</span>
+<span class="text-sm font-label opacity-80 uppercase tracking-tighter">Active Plots 🗺️</span>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-48 h-48 opacity-20 transform translate-x-8 translate-y-8">
+<img alt="Abstract Field Map" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAshcNGLuD2dk-LRglP7zSxniSxkCVa9RjHieikW-CDWT6UqFEUI7hVgk3p5o1gNiO814Ohamxw2l3LhDZ5_11C2J4YT1EdeehUrKBs36zZIjUFdD2Mk_KEMPW5T8EHgB9vEZeO2Gx0dI4We5vUSpomGDf1tR2oc8dZoOmtgB_bIrHDOYish_GgSwogVVXw9L5mkyYoMwBRUkwse9RsmyB7qaMh4UvbWCkxBJmfRcQsAImb4i1cW3S3tNbQcnegrwfSRwFh0rpmElP2"/>
+</div>
+</div>
+<!-- System Status -->
+<div class="bg-surface-container-high rounded-xl p-6">
+<h4 class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Account Security 🛡️</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<span class="text-sm font-medium">Verified Status ✅</span>
+</div>
+<span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded">Active</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<span class="text-sm font-medium">Alerts 🔔</span>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">Enabled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Section -->
+<div class="lg:col-span-12">
+<div class="bg-white rounded-xl p-8 border border-outline-variant/10 shadow-sm relative">
+<div class="absolute top-0 right-0 p-8 hidden md:block">
+<span class="material-symbols-outlined text-8xl text-surface-container opacity-40 select-none" data-icon="forum">forum</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline font-bold text-2xl mb-2">Platform Feedback 💬</h3>
+<p class="text-on-surface-variant font-label mb-8">Help us refine Fasal.AI by sharing your experience.</p>
+<div class="space-y-8 max-w-2xl">
+<div class="space-y-4">
+<label class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest">Select Category 📁</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 rounded-full border border-primary bg-primary text-on-primary text-sm font-bold transition-all">🧠 Advisory</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant bg-white text-on-surface-variant text-sm font-bold hover:bg-surface-container transition-all">💰 Market Prices</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant bg-white text-on-surface-variant text-sm font-bold hover:bg-surface-container transition-all">📈 Yield Forecast</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant bg-white text-on-surface-variant text-sm font-bold hover:bg-surface-container transition-all">📱 App Interface</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest">Your Experience ✍️</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-6 font-body focus:ring-2 focus:ring-primary transition-all text-sm" placeholder="How can we improve your farming experience?" rows="4"></textarea>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-headline font-bold text-sm shadow-lg hover:shadow-emerald-900/20 transition-all">
+                                        Submit Feedback
+                                    </button>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star">star</span>
+<span class="text-on-surface-variant text-xs font-bold ml-2">4.2 Global Rating ⭐</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Chatbot Button -->
+<button class="fixed bottom-8 right-8 z-[60] bg-emerald-700 text-white flex items-center gap-3 px-6 py-4 rounded-full shadow-2xl hover:bg-emerald-800 transition-all hover:scale-105 active:scale-95 group">
+<div class="relative">
+<span class="material-symbols-outlined text-3xl" data-icon="smart_toy">smart_toy</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+</span>
+</div>
+<div class="flex flex-col items-start leading-tight">
+<span class="text-xs font-bold uppercase tracking-wider opacity-80">Fasal Assistant</span>
+<span class="text-sm font-headline font-black">Chat with AI 🤖</span>
+</div>
+</button>
+<div class="h-24"></div>
+</main>
+</div>
+<!-- Mobile Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 px-6 py-4 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-label font-bold uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[10px] font-label font-bold uppercase">Fields</span>
+</a>
+<div class="bg-primary text-white p-4 rounded-full -mt-12 shadow-xl border-4 border-white">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="text-[10px] font-label font-bold uppercase">Help</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-label font-bold uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

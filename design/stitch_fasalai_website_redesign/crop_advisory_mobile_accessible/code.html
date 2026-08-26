@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fasal Intelligence | Crop Advisory</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#191c1c",
+                        "on-background": "#191c1c",
+                        "on-secondary-fixed": "#002109",
+                        "outline-variant": "#bdcac0",
+                        "on-primary-container": "#ffffff",
+                        "inverse-primary": "#71dba6",
+                        "tertiary-fixed": "#ffddb5",
+                        "primary-container": "#00875a",
+                        "secondary-fixed-dim": "#a2d3a4",
+                        "on-secondary-container": "#426e47",
+                        "on-secondary-fixed-variant": "#24502c",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#3c6842",
+                        "inverse-surface": "#2e3131",
+                        "surface-variant": "#e1e3e2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8faf9",
+                        "primary-fixed-dim": "#71dba6",
+                        "on-surface-variant": "#3e4942",
+                        "background": "#f8faf9",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#bdefbe",
+                        "on-tertiary-container": "#ffffff",
+                        "inverse-on-surface": "#eff1f0",
+                        "tertiary": "#825400",
+                        "outline": "#6e7a71",
+                        "surface-container-highest": "#e1e3e2",
+                        "primary-fixed": "#8df7c1",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#006c47",
+                        "surface-bright": "#f8faf9",
+                        "on-primary-fixed-variant": "#005235",
+                        "surface-dim": "#d8dad9",
+                        "surface-container-high": "#e6e9e8",
+                        "primary": "#006b47",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-low": "#f2f4f3",
+                        "tertiary-container": "#a36a00",
+                        "secondary-container": "#bdefbe",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#2a1800",
+                        "surface-container": "#eceeed",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#643f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-sm shadow-emerald-900/5 flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-700 text-lg">agriculture</span>
+</div>
+<span class="text-xl font-black text-emerald-800 dark:text-emerald-100 tracking-tight font-headline">Fasal Intelligence</span>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 font-label font-bold text-sm active:scale-95 duration-200">
+<span>English</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-8">
+<h1 class="text-3xl font-extrabold text-on-surface tracking-tight leading-tight mb-2">Crop Advisory</h1>
+<p class="text-on-surface-variant font-label text-sm">Enter soil telemetry to find the most profitable crop for your current land conditions.</p>
+</section>
+<!-- Soil Telemetry Input Section (Bento Inspired) -->
+<section class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<!-- NPK Inputs -->
+<div class="col-span-2 bg-surface-container-low p-6 rounded-xl space-y-4">
+<h3 class="font-headline font-bold text-emerald-800 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span>
+                        Nutrient Profile (NPK)
+                    </h3>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label font-semibold text-on-surface-variant uppercase tracking-wider">
+<span>Nitrogen (N)</span>
+<span class="text-emerald-700">65 mg/kg</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-emerald-100 rounded-full appearance-none cursor-pointer" type="range" value="65"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label font-semibold text-on-surface-variant uppercase tracking-wider">
+<span>Phosphorus (P)</span>
+<span class="text-emerald-700">42 mg/kg</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-emerald-100 rounded-full appearance-none cursor-pointer" type="range" value="42"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label font-semibold text-on-surface-variant uppercase tracking-wider">
+<span>Potassium (K)</span>
+<span class="text-emerald-700">38 mg/kg</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-emerald-100 rounded-full appearance-none cursor-pointer" type="range" value="38"/>
+</div>
+</div>
+</div>
+<!-- Secondary Telemetry -->
+<div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-50">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-emerald-600 text-lg">device_thermostat</span>
+<span class="text-xs font-label font-bold text-on-surface-variant">Temp</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-lg text-lg font-bold p-2 focus:ring-2 focus:ring-primary" type="number" value="28.5"/>
+<span class="text-[10px] text-slate-400 font-label">Celsius</span>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-50">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-emerald-600 text-lg">humidity_percentage</span>
+<span class="text-xs font-label font-bold text-on-surface-variant">Humidity</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-lg text-lg font-bold p-2 focus:ring-2 focus:ring-primary" type="number" value="62"/>
+<span class="text-[10px] text-slate-400 font-label">Percent (%)</span>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-50">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-emerald-600 text-lg">water_drop</span>
+<span class="text-xs font-label font-bold text-on-surface-variant">pH Level</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-lg text-lg font-bold p-2 focus:ring-2 focus:ring-primary" type="number" value="6.8"/>
+<span class="text-[10px] text-slate-400 font-label">Neutral</span>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-50">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-emerald-600 text-lg">rainy</span>
+<span class="text-xs font-label font-bold text-on-surface-variant">Rainfall</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-lg text-lg font-bold p-2 focus:ring-2 focus:ring-primary" type="number" value="203"/>
+<span class="text-[10px] text-slate-400 font-label">Millimeters</span>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full py-5 bg-primary text-on-primary rounded-lg font-headline font-extrabold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-all flex items-center justify-center gap-3">
+<span>Generate Recommendation</span>
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</section>
+<!-- Result Section (Asymmetric Recommendation Card) -->
+<section class="mt-12 space-y-6">
+<h2 class="text-xl font-bold font-headline text-emerald-900 px-1">Intelligent Prediction</h2>
+<div class="relative overflow-hidden bg-white rounded-xl shadow-xl shadow-emerald-900/5">
+<div class="absolute top-0 right-0 p-4">
+<div class="bg-emerald-600 text-white px-3 py-1 rounded-full font-label text-[10px] font-black tracking-widest uppercase">Best Match</div>
+</div>
+<div class="p-8">
+<div class="flex gap-6 items-start">
+<div class="w-24 h-24 rounded-2xl bg-emerald-50 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-emerald-600" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 text-tertiary font-label font-bold text-sm mb-1">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>98% Suitability</span>
+</div>
+<h3 class="text-2xl font-black font-headline text-on-surface leading-tight">Golden Basmati</h3>
+<p class="text-slate-500 text-sm mt-1">Premium Export Quality</p>
+</div>
+</div>
+<!-- Smart Chips -->
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-[11px] font-bold font-label flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">water_drop</span> Low Water
+                        </span>
+<span class="bg-amber-50 text-amber-700 px-4 py-1.5 rounded-full text-[11px] font-bold font-label flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">payments</span> High ROI
+                        </span>
+<span class="bg-emerald-50 text-emerald-700 px-4 py-1.5 rounded-full text-[11px] font-bold font-label flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">workspace_premium</span> Grade A
+                        </span>
+</div>
+<!-- Analysis Content -->
+<div class="mt-8 space-y-6">
+<div class="bg-surface-container-low p-5 rounded-lg border-l-4 border-emerald-500">
+<h4 class="font-headline font-bold text-on-surface text-sm mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600">psychology</span>
+                                Expert Analysis
+                            </h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                Soil NPK levels are optimal for starch accumulation. The current pH (6.8) provides the ideal window for essential micronutrient absorption. Humidity trends suggest a lower risk of fungal blast during the early growth stage.
+                            </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-on-surface text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600">inventory_2</span>
+                                Fertilizer Strategy
+                            </h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-white border border-slate-100 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center">🌽</div>
+<div>
+<p class="text-xs font-bold">Urea Treatment</p>
+<p class="text-[10px] text-slate-400">Week 2-4 dosage</p>
+</div>
+</div>
+<p class="text-sm font-black text-emerald-700">45kg/ha</p>
+</div>
+<div class="flex items-center justify-between p-3 bg-white border border-slate-100 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center">🧪</div>
+<div>
+<p class="text-xs font-bold">Potash Balance</p>
+<p class="text-[10px] text-slate-400">Pre-flowering</p>
+</div>
+</div>
+<p class="text-sm font-black text-emerald-700">20kg/ha</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (Fasal Assistant) -->
+<button class="fixed right-6 bottom-28 w-14 h-14 bg-emerald-900 text-white rounded-2xl shadow-xl shadow-emerald-950/30 flex items-center justify-center active:scale-90 transition-transform duration-300 z-40">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full bg-white/90 dark:bg-emerald-950/90 backdrop-blur-2xl flex justify-around items-center px-4 pt-3 pb-8 z-50 rounded-t-[3rem] shadow-[0_-8px_40px_rgba(0,107,71,0.06)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-emerald-700/50 px-5 py-2 hover:text-emerald-600 transition-colors">
+<span class="material-symbols-outlined text-2xl">potted_plant</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-800 text-emerald-900 dark:text-emerald-50 rounded-[2rem] px-5 py-2 active:scale-90 transition-transform duration-300 ease-out">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">Crops</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-emerald-700/50 px-5 py-2 hover:text-emerald-600 transition-colors">
+<span class="material-symbols-outlined text-2xl">trending_up</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">Markets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-emerald-700/50 px-5 py-2 hover:text-emerald-600 transition-colors">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">Expert</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pest Alerts - Fasal AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#006c47",
+                      "on-surface": "#191c1c",
+                      "on-secondary-fixed-variant": "#24502c",
+                      "surface-container-high": "#e6e9e8",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#3e4942",
+                      "inverse-surface": "#2e3131",
+                      "on-secondary-container": "#426e47",
+                      "primary": "#006b47",
+                      "primary-container": "#00875a",
+                      "surface": "#f8faf9",
+                      "on-tertiary-container": "#ffffff",
+                      "surface-container-low": "#f2f4f3",
+                      "on-primary": "#ffffff",
+                      "on-background": "#191c1c",
+                      "on-primary-fixed-variant": "#005235",
+                      "tertiary": "#825400",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#3c6842",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#002113",
+                      "tertiary-fixed-dim": "#ffb957",
+                      "secondary-container": "#bdefbe",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e1e3e2",
+                      "surface-bright": "#f8faf9",
+                      "tertiary-fixed": "#ffddb5",
+                      "inverse-on-surface": "#eff1f0",
+                      "on-secondary-fixed": "#002109",
+                      "on-primary-container": "#ffffff",
+                      "secondary-fixed": "#bdefbe",
+                      "background": "#f8faf9",
+                      "surface-variant": "#e1e3e2",
+                      "surface-container": "#eceeed",
+                      "outline": "#6e7a71",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#71dba6",
+                      "primary-fixed": "#8df7c1",
+                      "secondary-fixed-dim": "#a2d3a4",
+                      "on-tertiary-fixed-variant": "#643f00",
+                      "on-tertiary-fixed": "#2a1800",
+                      "tertiary-container": "#a36a00",
+                      "surface-dim": "#d8dad9",
+                      "primary-fixed-dim": "#71dba6",
+                      "outline-variant": "#bdcac0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Manrope"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-spring {
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        body {
+            background-color: #f8faf9;
+            color: #191c1c;
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="pb-32 pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-extrabold italic shadow-inner">
+                F
+            </div>
+<h1 class="font-headline font-bold text-lg tracking-tight text-emerald-700">Fasal AI</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-surface-container px-3 py-1.5 rounded-full text-secondary font-label text-xs font-semibold">
+<span class="material-symbols-outlined text-sm">translate</span>
+<span>English</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 hover:opacity-80 transition-opacity active:scale-95 transition-transform">translate</span>
+</div>
+</header>
+<main class="px-6 space-y-8">
+<!-- Title & Page Header -->
+<section class="mt-4">
+<h2 class="font-headline font-extrabold text-3xl tracking-tight text-on-surface">Pest Alerts ⚠️</h2>
+<p class="font-label text-on-surface-variant text-sm mt-1">Real-time localized threat intelligence</p>
+</section>
+<!-- Risk Level Banner (Glassmorphism & Bento Style) -->
+<section class="relative overflow-hidden bg-white rounded-xl p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] border border-white">
+<div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-tertiary-fixed/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-label font-bold uppercase tracking-widest">Moderate Risk</span>
+<h3 class="font-headline font-extrabold text-4xl mt-3 text-tertiary-container">74%</h3>
+<p class="font-label text-sm font-medium text-on-surface-variant">Relative Humidity Factor</p>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 flex items-center gap-4">
+<span class="text-2xl">📍</span>
+<p class="font-label text-xs leading-relaxed text-on-surface">
+                        Current conditions in <span class="font-bold">Nashik Region</span> are conducive for fungal spores. Monitor vineyards and pomegranate orchards closely.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Pest Risk Cards (Asymmetric/Stacked) -->
+<section class="space-y-6">
+<h4 class="font-headline font-bold text-xl text-on-surface flex items-center gap-2">
+                Regional Crop Analysis <span class="material-symbols-outlined text-primary text-sm">analytics</span>
+</h4>
+<!-- Cotton Card - High Risk -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full">
+<img alt="Cotton field" class="w-full h-full object-cover" data-alt="Close-up of a healthy white cotton boll in a sun-drenched field with soft green leaves under clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmPDnu4DAiDaRCdaPDNv1Md8Im--s7tOeVTKeg6B2TDx3NEWCywbXSW8gI5uU3Lu8ioeG6blrMbjDaPIyNIyMyEOruVq001t_V1cZp24RrD_TsfVNqKdO0jdZSi5p82zxI46g5-itiGp7pynqkGtkUf16rtDEQf4bR4HT71Veo2u7lTop8YbWfM_SRYeBTvkagYl742CYWDZWPx-tgBO-pEKDrarWrz7ZmDvyVNgIWUuQ03KBBQjzV9kOWwnIAOt3YzSOW_IiVKKv7"/>
+<div class="absolute top-4 left-4 bg-error text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">High Risk</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h5 class="font-headline font-extrabold text-xl">Cotton 🌿</h5>
+<p class="font-label text-sm text-error font-semibold flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-xs">bug_report</span> Pink Bollworm
+                            </p>
+</div>
+<span class="text-2xl">🐛</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 mb-6">
+<p class="font-label text-[11px] font-bold text-on-surface-variant uppercase mb-2">Recommended Protocol 🧪</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Install pheromone traps (5 per acre).
+                            </li>
+<li class="flex items-start gap-2 text-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Apply Neem-based insecticide immediately.
+                            </li>
+</ul>
+</div>
+<button class="w-full py-4 bg-primary text-white font-headline font-bold rounded-lg active:scale-95 transition-transform">
+                        View Full Report
+                    </button>
+</div>
+</div>
+<!-- Wheat Card - Low Risk -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm flex">
+<div class="w-1/3 h-auto">
+<img alt="Wheat field" class="w-full h-full object-cover" data-alt="Vast golden wheat field at sunrise with soft morning mist and golden light illuminating the stalks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyn-nzSMbtzNfHkM00zcCLss_aqNH7QWG_kWaMMamTMIgnR9himq4V8kI6OazI1uvg0czSDrLSx79iP58cPVlPLGzedYc6PkDLWyd9inr1M3U0nHpFljntSKoomyOfpRV29tS59WDhyhE-lv6BnN-soMvaDc9RUddtX1t6p_bMZ1qgdapUVQq79Eacdvfyl5GZB-HE0-ZFrRCoFNNcz7J8MI5V_J47K7LXwj67aAOhKYbYpwAoC4jxBaM6xrKZhMTiGPt6nlzbqZ5V"/>
+</div>
+<div class="w-2/3 p-5">
+<div class="flex justify-between items-start mb-2">
+<h5 class="font-headline font-bold text-lg">Wheat 🌾</h5>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[9px] font-bold">Low Risk</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-4">Threat: Yellow Rust <span class="material-symbols-outlined text-xs align-middle">lens_blur</span></p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary/30"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary/30"></span>
+</div>
+<button class="text-primary font-label text-xs font-bold flex items-center gap-1">
+                            Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sugarcane Card - Medium Risk -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">agriculture</span>
+</div>
+<div>
+<h5 class="font-headline font-bold text-lg">Sugarcane</h5>
+<p class="font-label text-xs text-on-surface-variant">Whitefly infestation detected</p>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold">Medium Risk</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="font-label text-[10px] text-on-surface-variant uppercase font-bold mb-1">Status</p>
+<p class="font-headline font-bold text-on-surface">Spreading 📉</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="font-label text-[10px] text-on-surface-variant uppercase font-bold mb-1">Action</p>
+<p class="font-headline font-bold text-on-surface">Monitor 👁️</p>
+</div>
+</div>
+<button class="w-full mt-4 py-3 border border-outline-variant text-primary font-label font-bold rounded-lg active:scale-95 transition-transform">
+                        Protocol Details
+                    </button>
+</div>
+</div>
+</section>
+<!-- Insights Footer -->
+<footer class="pb-8 pt-4">
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/10">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-headline font-bold">Fasal Tip</span>
+</div>
+<p class="font-label text-sm text-on-surface-variant leading-relaxed">
+                    Soil moisture is high this week. Avoid excessive nitrogen fertilizer to prevent soft plant tissue that attracts pests.
+                </p>
+</div>
+</footer>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-32 right-6 w-14 h-14 bg-primary-container text-white rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-all duration-300 z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 backdrop-blur-2xl shadow-[0_-8px_40px_rgba(0,0,0,0.04)] rounded-t-[3rem] z-50">
+<div class="flex flex-col items-center justify-center text-emerald-800/60 px-5 py-2 hover:bg-emerald-50 rounded-[2rem] transition-colors active:scale-90 transition-all ease-spring">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-emerald-100 text-emerald-900 rounded-[2rem] px-5 py-2 active:scale-90 transition-all ease-spring">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Advisory</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-800/60 px-5 py-2 hover:bg-emerald-50 rounded-[2rem] transition-colors active:scale-90 transition-all ease-spring">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Planner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-800/60 px-5 py-2 hover:bg-emerald-50 rounded-[2rem] transition-colors active:scale-90 transition-all ease-spring">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Market</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-800/60 px-5 py-2 hover:bg-emerald-50 rounded-[2rem] transition-colors active:scale-90 transition-all ease-spring">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

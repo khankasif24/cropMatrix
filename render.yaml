@@ -1,0 +1,27 @@
+# Render Blueprint — SmartCrop Advisory Backend
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: smartcrop-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: bash render_build.sh
+    startCommand: cd api && python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SUPABASE_URL
+        sync: false  # Set manually in Render dashboard
+      - key: SUPABASE_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL
+        value: "True"
+    healthCheckPath: /api/health
+    disk:
+      name: smartcrop-data
+      mountPath: /opt/render/project/src/latest_model
+      sizeGB: 1

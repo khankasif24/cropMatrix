@@ -1,0 +1,22 @@
+{
+    "Corn___Common_Rust": {
+      "spray": "Propiconazole 25% EC",
+      "dosage": "1 ml per litre",
+      "interval": "Every 7 days"
+    },
+    "Corn___Gray_Leaf_Spot": {
+      "spray": "Mancozeb 75% WP",
+      "dosage": "2.5 g per litre",
+      "interval": "Twice a week"
+    },
+    "Corn___Northern_Leaf_Blight": {
+      "spray": "Azoxystrobin 11% + Tebuconazole 18.3% SC",
+      "dosage": "2 ml per litre",
+      "interval": "Every 10 days"
+    },
+    "Corn___Healthy": {
+      "spray": "None required",
+      "dosage": "N/A",
+      "interval": "Monitor weekly"
+    }
+  }

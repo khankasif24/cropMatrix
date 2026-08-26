@@ -1,0 +1,17 @@
+{
+    "Potato___Early_Blight": {
+      "spray": "Chlorothalonil 75% WP",
+      "dosage": "2 g per litre",
+      "interval": "Repeat every 7–10 days"
+    },
+    "Potato___Late_Blight": {
+      "spray": "Metalaxyl + Mancozeb",
+      "dosage": "2.5 g per litre",
+      "interval": "Every 7 days during outbreak"
+    },
+    "Potato___Healthy": {
+      "spray": "Preventive fungicide as needed",
+      "dosage": "Follow label instructions",
+      "interval": "Routine check every 10 days"
+    }
+  }

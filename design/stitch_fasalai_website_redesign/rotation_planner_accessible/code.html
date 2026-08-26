@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fasal.AI - Rotation Planner</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-container": "#eceeed",
+                "secondary": "#3c6842",
+                "on-primary-fixed-variant": "#005235",
+                "surface-container-low": "#f2f4f3",
+                "tertiary-fixed": "#ffddb5",
+                "surface-container-high": "#e6e9e8",
+                "secondary-fixed": "#bdefbe",
+                "inverse-on-surface": "#eff1f0",
+                "on-secondary-fixed": "#002109",
+                "on-background": "#191c1c",
+                "on-surface-variant": "#3e4942",
+                "on-primary-fixed": "#002113",
+                "surface-tint": "#006c47",
+                "primary": "#006b47",
+                "primary-fixed-dim": "#71dba6",
+                "surface-dim": "#d8dad9",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff",
+                "secondary-fixed-dim": "#a2d3a4",
+                "background": "#f8faf9",
+                "on-tertiary": "#ffffff",
+                "error-container": "#ffdad6",
+                "surface-bright": "#f8faf9",
+                "on-error": "#ffffff",
+                "on-primary-container": "#ffffff",
+                "on-secondary": "#ffffff",
+                "on-surface": "#191c1c",
+                "surface-container-highest": "#e1e3e2",
+                "tertiary-container": "#a36a00",
+                "outline": "#6e7a71",
+                "outline-variant": "#bdcac0",
+                "on-error-container": "#93000a",
+                "primary-container": "#00875a",
+                "on-secondary-container": "#426e47",
+                "tertiary-fixed-dim": "#ffb957",
+                "tertiary": "#825400",
+                "inverse-primary": "#71dba6",
+                "on-tertiary-fixed-variant": "#643f00",
+                "primary-fixed": "#8df7c1",
+                "surface-variant": "#e1e3e2",
+                "on-secondary-fixed-variant": "#24502c",
+                "surface": "#f8faf9",
+                "secondary-container": "#bdefbe",
+                "inverse-surface": "#2e3131",
+                "on-tertiary-container": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#2a1800"
+              },
+              "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+              },
+              "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Manrope"],
+                "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="bg-[#eceeed] dark:bg-emerald-950 h-screen w-72 rounded-r-[3rem] sticky left-0 top-0 flex flex-col py-8 space-y-2 flex-shrink-0 z-40">
+<div class="px-8 mb-8">
+<h1 class="font-manrope font-black text-emerald-800 dark:text-emerald-100 text-2xl tracking-tight flex items-center gap-2">
+<span>🌱</span> Fasal.AI
+            </h1>
+<p class="font-manrope text-xs tracking-wide text-emerald-900/60 mt-1 uppercase">Premium Intelligence</p>
+</div>
+<!-- Language Selector -->
+<div class="px-6 mb-6">
+<div class="relative inline-block w-full">
+<select class="w-full bg-white/50 border-none rounded-xl text-xs font-label text-emerald-900/70 focus:ring-2 focus:ring-primary py-2 px-3 appearance-none cursor-pointer">
+<option value="en">🇺🇸 English</option>
+<option value="hi">🇮🇳 हिन्दी</option>
+<option value="pa">🇮🇳 ਪੰਜਾਬੀ</option>
+<option value="mr">🇮🇳 मराठी</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-emerald-900/70">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<nav class="flex-grow overflow-y-auto hide-scrollbar">
+<!-- Navigation Items -->
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-xs tracking-wide">📊 Dashboard</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-inter text-xs tracking-wide">🧠 Crop Advisory</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shutter_speed">shutter_speed</span>
+<span class="font-inter text-xs tracking-wide">🔍 Disease Detection</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-inter text-xs tracking-wide">🗺️ My Fields</span>
+</a>
+<!-- Active Tab: Rotation Planner -->
+<a class="bg-[#ffffff] dark:bg-emerald-900 text-emerald-800 dark:text-emerald-50 font-bold rounded-l-full ml-4 shadow-sm px-6 py-3 flex items-center gap-3 active:opacity-90 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="agriculture" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<span class="font-inter text-xs tracking-wide">🔄 Rotation Planner</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-inter text-xs tracking-wide">📈 Market Prices</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-inter text-xs tracking-wide">🔮 Yield Prediction</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-inter text-xs tracking-wide">⚠️ Pest Alerts</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+<span class="font-inter text-xs tracking-wide">🧪 Fertilizer</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-inter text-xs tracking-wide">🤝 Community</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-inter text-xs tracking-wide">💬 Feedback</span>
+</a>
+<a class="text-emerald-900/70 px-6 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-xs tracking-wide">👤 Profile</span>
+</a>
+</nav>
+<div class="px-6 pt-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-headline font-bold text-sm shadow-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">add</span>
+                New Crop Cycle
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-8 max-w-[calc(100vw-18rem)]">
+<!-- Top Control Bar -->
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="font-headline font-extrabold text-4xl text-on-surface tracking-tight mb-2">🔄 Rotation Planner</h2>
+<p class="font-body text-on-surface-variant max-w-xl">Optimize soil health and yield by managing your long-term crop sequence strategy through data-driven intelligence.</p>
+</div>
+<!-- Year Switcher -->
+<div class="flex items-center bg-surface-container-high p-1.5 rounded-full shadow-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="px-6 py-1 bg-surface-container-lowest rounded-full font-headline font-bold text-primary flex items-center gap-2">
+                    🗓️ Cycle 2024 - 2025
+                </div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</header>
+<!-- Dynamic Insights Grid -->
+<div class="grid grid-cols-12 gap-6 mb-12">
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center border border-outline-variant/10">
+<div class="relative w-40 h-40 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="88" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline font-extrabold text-3xl">82%</span>
+<span class="font-label text-[10px] uppercase tracking-widest opacity-60">Soil Score</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl mb-3">📈 Optimization Summary</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Your current rotation cycle is projected to increase nitrogen retention by <span class="text-primary font-bold">14%</span> compared to last season. Introducing pulse crops in Field B will further stabilize nutrient profiles.</p>
+<div class="flex gap-3">
+<span class="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-semibold">🧪 Nitrogen High</span>
+<span class="px-4 py-1.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-semibold">⌛ Wait for Harvest</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-primary text-on-primary rounded-xl p-8 shadow-lg flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline font-bold text-xl mb-2">✨ AI Suggestion</h3>
+<p class="text-primary-fixed text-sm opacity-90 leading-relaxed">Swap Maize for Legumes in Northern sectors next month to prevent root-knot nematode build-up.</p>
+</div>
+<button class="mt-6 py-3 px-6 bg-white text-primary rounded-full font-bold text-xs uppercase tracking-wider self-start hover:bg-primary-fixed transition-colors">Apply Strategy</button>
+<div class="absolute -right-10 -bottom-10 opacity-10">
+<span class="material-symbols-outlined text-[12rem]" data-icon="psychology">psychology</span>
+</div>
+</div>
+</div>
+<!-- The Rotation Grid -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/5">
+<div class="overflow-x-auto hide-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-6 font-headline font-bold text-on-surface w-64 border-r border-outline-variant/10">🌾 Field Identity</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">OCT</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">NOV</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">DEC</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">JAN</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">FEB</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">MAR</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">APR</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">MAY</th>
+<th class="p-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant text-center border-r border-outline-variant/10">JUN</th>
+</tr>
+</thead>
+<tbody>
+<!-- Field Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-outline-variant/5">
+<td class="p-6 border-r border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="vibrant green wheat field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBILwyTe794FuKVManKSy7cNGGR27qZ2mIjEYik48pyKOjkkQBzC6KrMQiL1NYC5XmacOHljyfqmCWCaWsBw-CADejYsYEcDZ87nx3P6bP_LhePzMKn1yv2JvcgwZu_sd57k0W3WMbypOaxOPcXe2qXKyxcvBHhzMWdeeAJ2VqqQmMCczLgaLBuW1xMp0qDcceLkaTbJLSK1tARwCMxUYTk53P7IYswhJfyGSaA3qGssLHp3R49j-tsrRgDGpcWJ1WWBJJp6gDEzXP_"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">Alpha Sector 01</div>
+<div class="font-label text-[10px] text-on-surface-variant">12.4 Hectares • Loamy Soil</div>
+</div>
+</div>
+</td>
+<td class="p-2 border-r border-outline-variant/10" colspan="4">
+<div class="h-12 bg-primary/10 border-l-4 border-primary rounded-r-lg flex items-center px-4 gap-3">
+<span class="text-xs">🌾</span>
+<span class="font-headline font-bold text-xs text-primary">Winter Wheat</span>
+<span class="font-label text-[9px] opacity-60 ml-auto">EST. YIELD: 6.2T/HA</span>
+</div>
+</td>
+<td class="p-2 border-r border-outline-variant/10" colspan="1">
+<div class="h-12 bg-surface-container-high/50 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant/30 text-lg">potted_plant</span>
+</div>
+</td>
+<td class="p-2 border-r border-outline-variant/10" colspan="4">
+<div class="h-12 bg-secondary/10 border-l-4 border-secondary rounded-r-lg flex items-center px-4 gap-3">
+<span class="text-xs">🌱</span>
+<span class="font-headline font-bold text-xs text-secondary">Soybeans</span>
+<span class="font-label text-[9px] opacity-60 ml-auto">N-FIXING PHASE</span>
+</div>
+</td>
+</tr>
+<!-- Field Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-outline-variant/5">
+<td class="p-6 border-r border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="young vegetable plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIMKyCBQhv6hOcc9svZ-UTxPA-WhDc8QP3vHIMwDRhj-YBsD2inZbPUhuM7KUdbdBCFSjXjApH4yl77vSrD3Uc4v25EOOyYf-7DcdYR99sO3-rZ9nSbEFAC1M0sTk2sqaQvk5k57FiihE9W7NiY2OLmQmSbuVVTxKjHf5Tu1BMPhpd_z3KImnruRspayBd-xwTdwOvd-JKOB_MG3dbSN19OvUMKcjHuqL_qqDWRrmz7QcMvbWDDt2X4X3pu0bo0HgxktVMSj_9OdGo"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">Beta Terrace</div>
+<div class="font-label text-[10px] text-on-surface-variant">8.9 Hectares • Clay Content</div>
+</div>
+</div>
+</td>
+<td class="p-2 border-r border-outline-variant/10" colspan="3">
+<div class="h-12 bg-tertiary-fixed text-on-tertiary-fixed-variant border-l-4 border-tertiary rounded-r-lg flex items-center px-4 gap-3">
+<span class="text-xs">🍺</span>
+<span class="font-headline font-bold text-xs">Malted Barley</span>
+</div>
+</td>
+<td class="p-2 border-r border-outline-variant/10" colspan="6">
+<div class="h-12 bg-primary-container/10 border-l-4 border-primary-container rounded-r-lg flex items-center px-4 gap-3">
+<span class="text-xs">🌽</span>
+<span class="font-headline font-bold text-xs text-primary-container">Corn (Hybrid F1)</span>
+<span class="font-label text-[9px] opacity-60 ml-auto">PLANNED CYCLE</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Legend -->
+<div class="mt-8 flex flex-wrap items-center gap-8 bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-label text-xs font-semibold text-on-surface-variant">🌾 Cereals</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="font-label text-xs font-semibold text-on-surface-variant">🌱 Legumes</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="font-label text-xs font-semibold text-on-surface-variant">🍞 Grains</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-amber-500"></div>
+<span class="font-label text-xs font-semibold text-on-surface-variant">🌻 Oilseeds</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+<span class="font-label text-xs font-semibold text-on-surface-variant">☘️ Cover Crops</span>
+</div>
+<div class="flex items-center gap-2 opacity-50 ml-auto">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="font-label text-[10px]">All dates are predicted based on historical weather patterns.</span>
+</div>
+</div>
+</main>
+<!-- Fasal Assistant Floating Button -->
+<div class="fixed bottom-32 right-10 z-50 group">
+<button class="flex items-center gap-2 bg-emerald-800 text-white px-5 py-3 rounded-full shadow-2xl hover:bg-emerald-900 transition-all hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined animate-bounce">smart_toy</span>
+<span class="font-headline font-bold text-sm">Fasal Assistant</span>
+</button>
+</div>
+<!-- Contextual FAB (Export) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-primary-container text-on-primary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl">download</span>
+</button>
+</body></html>

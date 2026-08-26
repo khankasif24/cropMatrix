@@ -1,0 +1,469 @@
+/* ═══════════════════════════════════════════════════════
+   Fasal.AI — Verdant Core Design System
+   "The Intelligent Ecosystem" — Premium Agritech Standards
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Google Fonts Import ──────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Material Symbols ──────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ── Base Reset ────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #f8faf9;
+  color: #191c1c;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Editorial Shadow (Premium) ───────────────────── */
+.editorial-shadow {
+  box-shadow: 0 8px 40px -12px rgba(0, 107, 71, 0.06);
+}
+
+.editorial-shadow-lg {
+  box-shadow: 0 12px 48px -8px rgba(0, 107, 71, 0.10);
+}
+
+.editorial-shadow-hover:hover {
+  box-shadow: 0 16px 56px -8px rgba(0, 107, 71, 0.14);
+}
+
+/* ── Glass Effect ──────────────────────────────────── */
+.glass-effect {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-dark {
+  background: rgba(0, 107, 71, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ── Premium Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #bdcac0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6e7a71;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Spinner ───────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e6e9e8;
+  border-top-color: #006b47;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.spinner-sm {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e6e9e8;
+  border-top-color: #006b47;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.shimmer-loading {
+  background: linear-gradient(90deg, #e6e9e8 25%, #f2f4f3 50%, #e6e9e8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Staggered animations for children */
+.stagger-children > * {
+  animation: fadeInUp 0.45s ease-out both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 180ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 360ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 420ms; }
+
+/* ── Input Fields (Verdant Core) ──────────────────── */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+  font-family: 'Manrope', sans-serif;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Remove number input arrows for clean look */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ── Custom Range Slider ──────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e1e3e2;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #006b47;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 107, 71, 0.3);
+  transition: transform 0.15s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #006b47;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 107, 71, 0.3);
+}
+
+/* ── Mobile Bottom Nav safe area ───────────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-safe-area {
+    padding-bottom: env(safe-area-inset-bottom, 6px);
+  }
+}
+
+/* ── Recharts overrides ────────────────────────────── */
+.recharts-cartesian-axis-tick-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  fill: #3e4942;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+/* ── Upload zone styling ──────────────────────────── */
+.upload-zone {
+  border: 2px dashed #bdcac0;
+  transition: all 0.3s ease;
+}
+.upload-zone:hover,
+.upload-zone.dragover {
+  border-color: #006b47;
+  background-color: rgba(0, 107, 71, 0.04);
+}
+
+/* ── Bento Grid Helper ─────────────────────────────── */
+.bento-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* ── Stat/Metric Card Hover Effect ─────────────────── */
+.metric-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px -8px rgba(0, 107, 71, 0.12);
+}
+
+/* ── Chip / Smart Tag ──────────────────────────────── */
+.smart-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── Hero image overlay ────────────────────────────── */
+.hero-overlay {
+  position: relative;
+}
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 59, 33, 0.8) 0%, rgba(0, 107, 71, 0.5) 100%);
+  border-radius: inherit;
+}
+.hero-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Circular Progress ─────────────────────────────── */
+.circular-progress {
+  transform: rotate(-90deg);
+}
+.circular-progress circle {
+  transition: stroke-dashoffset 1.2s ease-out;
+}
+
+/* ── Gantt / Timeline Bars ─────────────────────────── */
+.gantt-bar {
+  border-radius: 6px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.gantt-bar:hover {
+  opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE RESPONSIVENESS — Touch-First Overrides
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Small Screens (≤ 640px) ─────────────────────────── */
+@media (max-width: 640px) {
+  /* Typography scaling */
+  h1, .text-2xl { font-size: 1.35rem !important; }
+  h2, .text-xl { font-size: 1.15rem !important; }
+  h3, .text-lg { font-size: 1rem !important; }
+
+  /* Touch-friendly buttons — min 44px tap target */
+  button, a[role="button"], [type="submit"] {
+    min-height: 44px;
+  }
+
+  /* Form inputs — larger touch targets */
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;  /* prevents iOS zoom */
+    min-height: 44px;
+  }
+
+  /* Cards — reduce padding */
+  .editorial-shadow {
+    box-shadow: 0 4px 24px -8px rgba(0, 107, 71, 0.05);
+  }
+
+  /* Smart chips — slightly smaller */
+  .smart-chip {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  /* Grid overrides — stack on mobile */
+  .grid-cols-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-cols-5 { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Prevent horizontal overflow */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Bottom nav spacing */
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* ── Medium Screens (641px — 768px) ──────────────────── */
+@media (min-width: 641px) and (max-width: 768px) {
+  h1 { font-size: 1.5rem !important; }
+
+  .smart-chip {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ── Touch device hover prevention ───────────────────── */
+@media (hover: none) {
+  .hover\:-translate-y-1:active {
+    transform: translateY(-2px);
+  }
+  .metric-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -8px rgba(0, 107, 71, 0.1);
+  }
+}
+
+/* ── Landscape phone fix ─────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .py-16 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  .py-12 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+}
+
+/* ── Print-friendly ──────────────────────────────────── */
+@media print {
+  nav, .glass-effect, .bottom-safe-area, .chatbot-fab { display: none !important; }
+  .editorial-shadow { box-shadow: none !important; }
+  body { background: white !important; }
+}

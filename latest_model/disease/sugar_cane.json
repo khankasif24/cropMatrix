@@ -1,0 +1,17 @@
+{
+    "Sugarcane___Red_Rot": {
+      "spray": "Bordeaux mixture or Carbendazim",
+      "dosage": "1 g per litre",
+      "interval": "Apply at early stage of infection"
+    },
+    "Sugarcane___Bacterial_Blight": {
+      "spray": "Streptocycline + Copper oxychloride",
+      "dosage": "0.5 g + 2.5 g per litre",
+      "interval": "Repeat every 7–10 days"
+    },
+    "Sugarcane___Healthy": {
+      "spray": "None necessary",
+      "dosage": "N/A",
+      "interval": "Maintain field hygiene"
+    }
+  }

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pest Alerts | Fasal.AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f3",
+                        "surface-tint": "#006c47",
+                        "surface-container-high": "#e6e9e8",
+                        "primary-fixed-dim": "#71dba6",
+                        "on-background": "#191c1c",
+                        "tertiary-fixed": "#ffddb5",
+                        "tertiary": "#825400",
+                        "error": "#ba1a1a",
+                        "primary": "#006b47",
+                        "on-secondary-container": "#426e47",
+                        "on-surface-variant": "#3e4942",
+                        "on-secondary-fixed-variant": "#24502c",
+                        "on-secondary-fixed": "#002109",
+                        "surface-container": "#eceeed",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "on-primary-fixed-variant": "#005235",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "surface-variant": "#e1e3e2",
+                        "tertiary-container": "#a36a00",
+                        "on-primary-fixed": "#002113",
+                        "inverse-primary": "#71dba6",
+                        "on-tertiary-fixed": "#2a1800",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f0",
+                        "surface-bright": "#f8faf9",
+                        "secondary": "#3c6842",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3131",
+                        "secondary-container": "#bdefbe",
+                        "primary-fixed": "#8df7c1",
+                        "secondary-fixed": "#bdefbe",
+                        "error-container": "#ffdad6",
+                        "background": "#f8faf9",
+                        "primary-container": "#00875a",
+                        "on-surface": "#191c1c",
+                        "surface-container-highest": "#e1e3e2",
+                        "secondary-fixed-dim": "#a2d3a4",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dad9",
+                        "outline-variant": "#bdcac0",
+                        "outline": "#6e7a71",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8faf9",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .label-text { font-family: 'Inter', sans-serif; }
+        .emerald-white-theme {
+            --primary-bg: #ffffff;
+            --primary-accent: #006b47;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen flex emerald-white-theme relative">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col h-screen w-72 rounded-r-xl sticky left-0 top-0 bg-[#eceeed] py-8 space-y-2 shrink-0">
+<div class="px-8 mb-8">
+<img alt="Fasal.AI Logo" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugFXN8fEW3OfyGclsuaS8XdDGkzF8vXIRE6cIRTIh61KP0qaey34s8-1LeicZyUDphnfL0acGpwD8O32aMWMUcDcewl2iw6bsRT4DdQDs8dUDRN4g7w-X3VGhGbyiK6mQaq5ZLDV2nMtEwM8VYo4NrSd9462V80GYR_12j5XaAUtGP9S3cANx_F_ZMM0gWQACH3XzKLk9eBRrysJTI7DtD24tw6P8LzVEsLN_d5kOsTW5JsKb8vY0-BR94_Mw0dzHOtZUAm8GpXKuE"/>
+</div>
+<nav class="flex-1 flex flex-col space-y-1 overflow-y-auto">
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="label-text text-sm font-medium">Dashboard 📊</span>
+</a>
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="label-text text-sm font-medium">Crop Advisory 💡</span>
+</a>
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shutter_speed">shutter_speed</span>
+<span class="label-text text-sm font-medium">Disease Detection 🔍</span>
+</a>
+<a class="bg-surface-container-lowest text-primary font-bold rounded-l-full ml-4 shadow-sm px-4 py-3 flex items-center gap-3 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="label-text text-sm">Pest Alerts ⚠️</span>
+</a>
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="label-text text-sm font-medium">My Fields 🗺️</span>
+</a>
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="agriculture">agriculture</span>
+<span class="label-text text-sm font-medium">Rotation Planner 🚜</span>
+</a>
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="label-text text-sm font-medium">Market Prices 📈</span>
+</a>
+<a class="text-emerald-900/70 px-8 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="label-text text-sm font-medium">Yield Prediction 🔮</span>
+</a>
+</nav>
+<div class="px-6 pt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3 p-3 bg-surface-container-highest/40 rounded-lg">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">JD</div>
+<div>
+<p class="text-xs font-bold label-text">John Doe 👤</p>
+<p class="text-[10px] text-on-surface-variant label-text">Premium Member ⭐</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0 h-screen overflow-y-auto scroll-smooth">
+<!-- Header / Top Bar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl px-8 py-6 flex flex-wrap gap-4 justify-between items-center max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-4">
+<div>
+<h2 class="font-headline font-bold text-2xl text-on-background tracking-tight">Pest Alerts ⚠️</h2>
+<p class="text-on-surface-variant label-text text-sm">Real-time biosecurity monitoring for your crops</p>
+</div>
+<!-- Language Selector -->
+<div class="ml-4 flex items-center gap-2 bg-surface-container-low px-3 py-2 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="language">language</span>
+<select class="bg-transparent border-none p-0 text-xs font-bold focus:ring-0 cursor-pointer">
+<option value="en">English (US)</option>
+<option value="hi">हिन्दी (Hindi)</option>
+<option value="mr">मराठी (Marathi)</option>
+<option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-surface-container-high p-3 rounded-full hover:bg-surface-container-highest transition-all flex items-center justify-center relative">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border border-white"></span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-primary-container transition-all shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Crop Cycle 🌱
+            </button>
+</div>
+</header>
+<div class="px-8 pb-12 max-w-7xl mx-auto space-y-8">
+<!-- Filters & Global Risk Banner -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Filters -->
+<div class="lg:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col gap-4">
+<div class="space-y-2">
+<label class="label-text text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-1">
+                        Select State 📍
+                    </label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg label-text text-sm focus:ring-2 focus:ring-primary">
+<option>Maharashtra</option>
+<option>Punjab</option>
+<option>Karnataka</option>
+<option>Gujarat</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="label-text text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-1">
+                        Growing Season 🗓️
+                    </label>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-on-primary py-2 rounded-lg text-xs font-bold label-text">Kharif</button>
+<button class="flex-1 bg-surface-container-lowest text-on-surface-variant py-2 rounded-lg text-xs font-bold label-text hover:bg-surface-container-high transition-colors">Rabi</button>
+<button class="flex-1 bg-surface-container-lowest text-on-surface-variant py-2 rounded-lg text-xs font-bold label-text hover:bg-surface-container-high transition-colors">Zaid</button>
+</div>
+</div>
+</div>
+<!-- Global Risk Banner -->
+<div class="lg:col-span-8 relative overflow-hidden bg-gradient-to-br from-primary-container to-primary p-8 rounded-xl flex items-center justify-between text-on-primary">
+<div class="relative z-10 space-y-2">
+<div class="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-sm" data-icon="gpp_maybe">gpp_maybe</span>
+<span class="text-[10px] font-bold uppercase tracking-widest label-text">Current Regional Risk Level 📢</span>
+</div>
+<h3 class="text-4xl font-headline font-black">Moderate Risk 🟠</h3>
+<p class="text-sm opacity-90 max-w-md">Atmospheric conditions in Maharashtra are currently conducive to Aphid and Jassid proliferation. High humidity expected for the next 72 hours.</p>
+</div>
+<div class="relative z-10 text-right">
+<span class="text-6xl font-black opacity-30">74%</span>
+<p class="text-xs uppercase tracking-widest font-bold opacity-80">Humidity Factor 💧</p>
+</div>
+<div class="absolute right-0 top-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</div>
+</section>
+<!-- Pest Alert Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Crop Card: Cotton -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col h-full hover:shadow-xl hover:shadow-primary/5 transition-all group border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="spa">spa</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Cotton 🧶</h4>
+<p class="text-xs text-on-surface-variant label-text">Bt Hybrid Variety</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-error/10 text-error text-[10px] font-bold uppercase tracking-wider label-text">🔴 High Risk</span>
+</div>
+<div class="relative w-full h-32 mb-6 rounded-lg overflow-hidden">
+<img alt="close-up of pink bollworm pest on a cotton crop leaf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqpQ2U17rlT4xkLm4DhjD1Ndb35SjIUxKOQtmHRRGbZa1njx2nJVU4hU1df5xbDF99qMjBmA61q2LtzZHtVE9P9L3BYNrZSXR3NbS14y03xA1_uEJX07m26c6e0cQBnSUkerum-nDfkdNjCQLVmaYmNNyxpTg1NNRpgXi7j4iAM9lCSIrI8x4S4yKaqsyiVx1mw6vaMGLDDIElXDkBLCo3cmWf-NNqzLakyC37dgZGKO4MAy3uxCZ8hPkRM6iSduQr2aC3GnC_oRJO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+<p class="text-white text-xs font-bold">Threat: Pink Bollworm 🐛</p>
+</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="p-3 bg-surface-container rounded-lg">
+<p class="text-xs text-on-surface-variant leading-relaxed label-text">Increased pheromone trap catches reported in central regions. Early stage larvae detected in 12% of inspected squares.</p>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-black uppercase text-on-surface-variant tracking-widest label-text">Recommended Protocol 📋</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-xs">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<span>Install 5 pheromone traps per acre immediately. 🪤</span>
+</li>
+<li class="flex items-start gap-2 text-xs">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<span>Apply Neem-based bio-insecticide (1500 ppm). 🌿</span>
+</li>
+</ul>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-primary/5 text-primary rounded-lg font-bold text-sm hover:bg-primary hover:text-white transition-all">View Full Report 📄</button>
+</div>
+<!-- Crop Card: Wheat -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col h-full hover:shadow-xl hover:shadow-primary/5 transition-all group border-l-4 border-tertiary">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="grass">grass</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Wheat 🌾</h4>
+<p class="text-xs text-on-surface-variant label-text">Durum Wheat</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider label-text">🟠 Medium Risk</span>
+</div>
+<div class="relative w-full h-32 mb-6 rounded-lg overflow-hidden">
+<img alt="golden wheat field" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzsvIvT96RxIAXgPDSER_4QGCVYbmVAK3syAawoOnJymC-Wcaa-ee70D_fu1fv1rFu7qZe-RkrmvixrYBVGie8VWc-FOngLD_YSdfB2I8-hVyM5XcKjEe_nGghSsdJYiz30eFrUX6Z6uwaruRpXz3f7AHZKsx9CW6PQfpSKUTvUC2cjhfgxQBgDOec4277uDM6vabB8-LgnfCZ3EOvPx7Wg2OcOeRZGKvgZ-l8ou8rGyGxMUpsMtaMFBMZ2n6w1dgd1sRe9dcHC4IA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+<p class="text-white text-xs font-bold">Threat: Yellow Rust 🍂</p>
+</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="p-3 bg-surface-container rounded-lg">
+<p class="text-xs text-on-surface-variant leading-relaxed label-text">Localized outbreaks observed in neighboring districts. Night temperature and dew point indicate potential spread.</p>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-black uppercase text-on-surface-variant tracking-widest label-text">Recommended Protocol 📋</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-xs">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="info">info</span>
+<span>Monitor leaf undersides daily for yellow pustules. 🔍</span>
+</li>
+<li class="flex items-start gap-2 text-xs">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="info">info</span>
+<span>Restrict irrigation during high humidity periods. 🚫💧</span>
+</li>
+</ul>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-tertiary/5 text-tertiary rounded-lg font-bold text-sm hover:bg-tertiary hover:text-white transition-all">View Full Report 📄</button>
+</div>
+<!-- Crop Card: Sugarcane -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col h-full hover:shadow-xl hover:shadow-primary/5 transition-all group border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="potted_plant">potted_plant</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Sugarcane 🎋</h4>
+<p class="text-xs text-on-surface-variant label-text">Commercial Hybrid</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider label-text">🟢 Low Risk</span>
+</div>
+<div class="relative w-full h-32 mb-6 rounded-lg overflow-hidden">
+<img alt="lush green sugarcane plantation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSDhySw_9BrbhCKH7YZMXPfWYCm5_xKSKl341iGBW2MGCiK2UQcIEMe0NrpKGrrCbesB_afrQzFLqRFQ1wjyh3cOwflpRDaub7dnwOecVvpu6KAp6QAR9BAmPF5XwJQ_dyiNqCXmhpJsvRPQovKs_Ww76MJMW2Bih-IDjCbSgfSIHK_Y3FjzLk4t66S9kuSFfzIjoyM5GAPhIf0FmZ5JIpC2LOLtqxnrTsB5yMwmOL64WvHeDdP55Zb5_PflmsBOoGKzARvpnnbwym"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+<p class="text-white text-xs font-bold">Threat: Whitefly ☁️</p>
+</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="p-3 bg-surface-container rounded-lg">
+<p class="text-xs text-on-surface-variant leading-relaxed label-text">Current populations are below economic injury level. Routine surveillance is sufficient for this stage.</p>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-black uppercase text-on-surface-variant tracking-widest label-text">Recommended Protocol 📋</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-xs">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check">check</span>
+<span>Weekly field scouting of border rows. 🚶‍♂️</span>
+</li>
+<li class="flex items-start gap-2 text-xs">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check">check</span>
+<span>No chemical intervention required at this time. ✅</span>
+</li>
+</ul>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-secondary/5 text-secondary rounded-lg font-bold text-sm hover:bg-secondary hover:text-white transition-all">View Full Report 📄</button>
+</div>
+</section>
+<!-- Intelligence Section / Map -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
+<div class="bg-surface-container p-8 rounded-xl space-y-6">
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-xl">Pest Spread Trajectory 📈</h4>
+<span class="material-symbols-outlined text-primary" data-icon="insights">insights</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed label-text">Our AI models predict a northward movement of pest clusters due to current wind patterns. Farmers in the Aurangabad region should begin preventative measures.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<p class="text-2xl font-black text-primary">48h</p>
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Alert Lead Time 🕒</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<p class="text-2xl font-black text-primary">92%</p>
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Model Accuracy ✅</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest rounded-xl min-h-[300px] overflow-hidden relative">
+<img alt="abstract satellite view of farmland grid" class="w-full h-full object-cover opacity-50 grayscale mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDezj3xCR0MF2MtIFJs_5nkUcjmZPFnsf4pMRWg6sk01-27NCwWGUkN_0j8AEiOY5qu08MpCNHREmWXa47jdmJajhSOlDH3Sz_wN68mynUIyHHY1jrxxbMi4y_D1KDSEHvlwUHsobdnMAjBSYeGxlQpgdNeYJa1aiQnia9obZgpZthhimOgCZJCaf-sP2fRparXX1i4-0YY6RCthm0ZKGgFwwSy9A7V5nKCMi0uShwVGotztKuArhLQSIwEs7WD8RHT6uRlCbU0nVYZ"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-white/40 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="location_on">location_on</span>
+<h5 class="font-headline font-bold text-lg mb-2">Regional Outbreak Map 📍</h5>
+<p class="text-xs text-on-surface-variant max-w-[240px] label-text">Interactive heat-mapping showing confirmed pest sightings and environmental risk factors.</p>
+<button class="mt-6 px-6 py-2 bg-primary text-on-primary rounded-full text-xs font-bold shadow-lg">Open Interactive Map 🗺️</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Fasal Assistant Chatbot Button -->
+<div class="fixed bottom-24 right-8 md:bottom-8 md:right-8 z-[60]">
+<button class="bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all group relative">
+<span class="material-symbols-outlined text-3xl group-hover:hidden" data-icon="smart_toy">smart_toy</span>
+<span class="material-symbols-outlined text-3xl hidden group-hover:block" data-icon="chat">chat</span>
+<!-- Badge -->
+<span class="absolute -top-1 -right-1 bg-error text-white text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-white">1</span>
+<!-- Tooltip/Label -->
+<span class="absolute right-20 bg-white text-primary font-bold px-4 py-2 rounded-xl shadow-lg border border-outline-variant/30 text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            Ask Fasal Assistant 👋
+        </span>
+</button>
+</div>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-surface-container-high py-3 px-6 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold label-text">Home 🏠</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-[10px] font-bold label-text">Alerts ⚠️</span>
+</a>
+<div class="bg-primary -mt-10 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+<span class="material-symbols-outlined text-white" data-icon="add">add</span>
+</div>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-[10px] font-bold label-text">Market 📈</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold label-text">Profile 👤</span>
+</a>
+</nav>
+</body></html>

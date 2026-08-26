@@ -1,0 +1,22 @@
+{
+    "Rice___Brown_Spot": {
+      "spray": "Carbendazim 50% WP",
+      "dosage": "1 g per litre",
+      "interval": "Repeat every 10 days"
+    },
+    "Rice___Leaf_Blast": {
+      "spray": "Tricyclazole 75% WP",
+      "dosage": "0.6 g per litre",
+      "interval": "Apply twice in 10-day gap"
+    },
+    "Rice___Neck_Blast": {
+      "spray": "Isoprothiolane 40% EC",
+      "dosage": "1.5 ml per litre",
+      "interval": "Every 12–15 days"
+    },
+    "Rice___Healthy": {
+      "spray": "Not required",
+      "dosage": "N/A",
+      "interval": "Monitor during high humidity"
+    }
+  }

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "pm_kisan",
+    "name": "PM-KISAN",
+    "category": "Income Support",
+    "emoji": "💰",
+    "description": "Provides ₹6,000 per year to eligible farmer families in 3 equal installments of ₹2,000 each, directly into their bank accounts.",
+    "eligibility": "All landholding farmer families with cultivable land (subject to exclusion criteria for higher income groups)",
+    "benefits": ["₹6,000/year direct income support", "3 installments of ₹2,000 each", "Direct bank transfer (DBT)"],
+    "documents": ["Aadhaar Card", "Bank Account (linked to Aadhaar)", "Land ownership records", "Mobile number"],
+    "apply_url": "https://pmkisan.gov.in/",
+    "check_status": "https://pmkisan.gov.in/BeneficiaryStatus.aspx"
+  },
+  {
+    "id": "pmfby",
+    "name": "PMFBY (Crop Insurance)",
+    "category": "Insurance",
+    "emoji": "🛡️",
+    "description": "Pradhan Mantri Fasal Bima Yojana provides comprehensive insurance coverage against crop loss due to natural calamities, pests, and diseases.",
+    "eligibility": "All farmers including sharecroppers and tenant farmers growing notified crops",
+    "benefits": ["Crop loss protection from natural calamities", "Low premium: 2% for Kharif, 1.5% for Rabi", "Full sum insured with no cap on subsidy"],
+    "documents": ["Aadhaar Card", "Bank account details", "Land records / Tenancy agreement", "Sowing certificate"],
+    "apply_url": "https://pmfby.gov.in/",
+    "check_status": "https://pmfby.gov.in/claimStatus"
+  },
+  {
+    "id": "kcc",
+    "name": "Kisan Credit Card (KCC)",
+    "category": "Credit",
+    "emoji": "💳",
+    "description": "Provides short-term credit to farmers for cultivation, post-harvest expenses, and allied activities at subsidized interest rates.",
+    "eligibility": "Farmers, fishermen, and animal husbandry farmers with land or lease documents",
+    "benefits": ["Credit limit based on landholding", "4% interest rate (with prompt repayment)", "Flexible repayment schedule", "Insurance coverage included"],
+    "documents": ["Aadhaar Card", "Land ownership / lease documents", "Bank account", "Passport-size photo"],
+    "apply_url": "https://www.jansamarth.in/kisan-credit-card-scheme",
+    "check_status": null
+  },
+  {
+    "id": "aif",
+    "name": "Agriculture Infrastructure Fund",
+    "category": "Infrastructure",
+    "emoji": "🏗️",
+    "description": "₹1 lakh crore financing facility for investment in post-harvest management infrastructure and community farming assets.",
+    "eligibility": "Farmers, FPOs, PACS, agri-entrepreneurs, startups, and state agencies",
+    "benefits": ["3% interest subvention for up to 7 years", "Credit guarantee coverage up to ₹2 crore", "Loans for cold storage, warehouses, processing units"],
+    "documents": ["Project proposal / DPR", "Identity proof (Aadhaar / PAN)", "Land documents", "Bank account details"],
+    "apply_url": "https://agriinfra.dac.gov.in/",
+    "check_status": null
+  },
+  {
+    "id": "pm_kusum",
+    "name": "PM-KUSUM",
+    "category": "Solar",
+    "emoji": "☀️",
+    "description": "Pradhan Mantri Kisan Urja Suraksha evam Utthan Mahabhiyan — subsidy for installing solar pumps and solar power plants on agricultural land.",
+    "eligibility": "Individual farmers, farmer groups, cooperatives with land access",
+    "benefits": ["Up to 60% subsidy on solar pumps", "Reduced electricity costs", "Extra income from selling surplus power", "Decentralized solar energy access"],
+    "documents": ["Land ownership proof", "Aadhaar Card", "Bank account details", "Electricity bill (if grid-connected)"],
+    "apply_url": "https://pmkusum.mnre.gov.in/",
+    "check_status": null
+  },
+  {
+    "id": "enam",
+    "name": "e-NAM (National Agriculture Market)",
+    "category": "Market",
+    "emoji": "📊",
+    "description": "Online trading platform connecting APMC mandis across India for transparent price discovery and better returns for farmers.",
+    "eligibility": "Farmers registered with any APMC mandi in e-NAM network",
+    "benefits": ["Better price discovery", "Transparent bidding process", "Reduced intermediary costs", "Direct payment to bank account"],
+    "documents": ["Farmer registration / Mandi ID", "Bank account details", "Aadhaar Card"],
+    "apply_url": "https://enam.gov.in/web/",
+    "check_status": null
+  },
+  {
+    "id": "shc",
+    "name": "Soil Health Card Scheme",
+    "category": "Soil",
+    "emoji": "🧪",
+    "description": "Free soil testing and health card for every farmer, providing crop-wise nutrient recommendations to improve productivity.",
+    "eligibility": "All farmers with agricultural land",
+    "benefits": ["Free soil testing", "Customized fertilizer recommendations", "Improved crop yield", "Printed health card delivered"],
+    "documents": ["Aadhaar Card", "Land details", "Mobile number"],
+    "apply_url": "https://soilhealth.dac.gov.in/",
+    "check_status": "https://soilhealth.dac.gov.in/PublicReports/SoilSampleReport"
+  },
+  {
+    "id": "pkvy",
+    "name": "Paramparagat Krishi Vikas Yojana",
+    "category": "Organic",
+    "emoji": "🌿",
+    "description": "Promotes organic farming through cluster-based approach with financial assistance for inputs, certification, and marketing.",
+    "eligibility": "Groups of 50+ farmers forming a cluster of 20 hectares",
+    "benefits": ["₹50,000/ha over 3 years", "Organic certification support", "Marketing and branding assistance", "Training on organic techniques"],
+    "documents": ["Group formation documents", "Land records", "Aadhaar of all members", "Bank account details"],
+    "apply_url": "https://pgsindia-ncof.gov.in/",
+    "check_status": null
+  },
+  {
+    "id": "smam",
+    "name": "Sub-Mission on Agricultural Mechanization",
+    "category": "Equipment",
+    "emoji": "🚜",
+    "description": "Provides subsidies on purchase of agricultural machinery and equipment, and supports Custom Hiring Centres (CHCs).",
+    "eligibility": "Individual farmers, farmer groups, FPOs, and entrepreneurs",
+    "benefits": ["40-50% subsidy on farm machinery", "Support for Custom Hiring Centres", "Training on machine operations", "Higher productivity"],
+    "documents": ["Aadhaar Card", "Land records", "Bank account", "Quotation from dealer"],
+    "apply_url": "https://agrimachinery.nic.in/",
+    "check_status": null
+  },
+  {
+    "id": "nmsa",
+    "name": "National Mission for Sustainable Agriculture",
+    "category": "Sustainability",
+    "emoji": "♻️",
+    "description": "Promotes sustainable agriculture through water use efficiency, soil health management, and climate change adaptation strategies.",
+    "eligibility": "All farmers, with priority for rainfed and vulnerable areas",
+    "benefits": ["Micro-irrigation support", "Soil health improvement", "Climate resilient crop varieties", "Capacity building programs"],
+    "documents": ["Aadhaar Card", "Land records", "Bank account details"],
+    "apply_url": "https://nmsa.dac.gov.in/",
+    "check_status": null
+  }
+]

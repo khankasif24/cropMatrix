@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.env
+venv/
+env/
+
+# Node
+node_modules/
+apps/web/dist/
+.cache/
+
+# ML Models (tracked via Git LFS now, EXCEPT .h5)
+# old TensorFlow .h5 models are excluded because they are too large and replaced by .tflite.
+*.h5
+
+# SQLite DB (regenerated on deploy)
+latest_model/smartcrop.db
+
+# Data (tracked via Git LFS now)
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Installers / binaries
+*.exe
+*.msix
+*.msi
+
+# Logs
+*.log
+
+# Changes folder (dev only)
+changes_new/
+
+# Old SQLite-era files (pre-Supabase migration)
+old_sqlite/
